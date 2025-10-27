@@ -18,6 +18,9 @@ interface Post {
 export default function Gallery() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Determine basePath based on whether we're in static export or server mode
+  const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/latent-self') ? '/latent-self' : '';
 
   useEffect(() => {
     loadPosts();
@@ -31,9 +34,6 @@ export default function Gallery() {
   const loadPosts = async () => {
     try {
       setIsLoading(true);
-      
-      // Get the current pathname to determine basePath
-      const basePath = '/latent-self';
       
       // Try to load from static posts.json first (for static exports)
       try {
@@ -101,7 +101,7 @@ export default function Gallery() {
                 {/* Image */}
                 <div className="relative w-full aspect-square overflow-hidden">
                   <Image
-                    src={`/db/${post.filename}`}
+                    src={`${basePath}/db/${post.filename}`}
                     alt={`AI Generated Art - ${post.type}`}
                     fill
                     className="object-cover"
