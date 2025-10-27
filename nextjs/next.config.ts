@@ -20,16 +20,8 @@ const nextConfig: NextConfig = {
     return [];
   },
   
-  webpack: (config, { isServer }) => {
-    // Exclude pages/api during static export
-    if (process.env.STATIC_EXPORT && !isServer) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@/pages/api': false,
-      };
-    }
-    return config;
-  },
+  // Use webpack explicitly instead of Turbopack
+  webpack: (config) => config,
 };
 
 export default nextConfig;
