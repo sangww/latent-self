@@ -1,18 +1,19 @@
-import { NextResponse } from 'next/server';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-// Tell Next.js this is a server-only route
-export const dynamic = 'force-dynamic';
-
 // Dynamic route: [filename] captures the actual filename from URL
 // Example: /api/images/2025-10-26-215555.png → filename = "2025-10-26-215555.png"
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ filename: string }> }
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
 ) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
   try {
-    const { filename } = await params; // Extract filename from URL
+    const filename = req.query.filename as string;
     console.log('📷 Image request for:', filename);
     
     // Try public/db first (for static exports), then db (for server mode)
@@ -38,7 +39,7 @@ export async function GET(
     
     if (!filePath) {
       console.log('❌ File not found in either location');
-      return NextResponse.json({ error: 'File not found' }, { status: 404 });
+      return res.status(404).json({ error: 'File not found' });
     }
     
     const fileBuffer = fs.readFileSync(filePath);
@@ -47,15 +48,13 @@ export async function GET(
     const ext = filename.split('.').pop()?.toLowerCase();
     const contentType = ext === 'png' ? 'image/png' : ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : 'image/png';
     
-    return new NextResponse(fileBuffer, {
-      headers: {
-        'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=31536000, immutable',
-      },
-    });
+    // Set headers and send file buffer
+    res.setHeader('Content-Type', contentType);
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    return res.status(200).send(fileBuffer);
   } catch (error) {
     console.error('Error serving image:', error);
-    return NextResponse.json({ error: 'Failed to serve image' }, { status: 500 });
+    return res.status(500).json({ error: 'Failed to serve image' });
   }
 }
 

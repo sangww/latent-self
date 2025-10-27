@@ -1,9 +1,6 @@
-import { NextResponse } from 'next/server';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-
-// Tell Next.js this is a server-only route
-export const dynamic = 'force-dynamic';
 
 interface Post {
   id: string;
@@ -17,7 +14,14 @@ interface Post {
   shares: number;
 }
 
-export async function GET() {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
   try {
     const dbPath = path.join(process.cwd(), 'db');
     
@@ -26,7 +30,7 @@ export async function GET() {
     // Check if db directory exists
     if (!fs.existsSync(dbPath)) {
       console.log('Posts API - db directory not found');
-      return NextResponse.json([]);
+      return res.status(200).json([]);
     }
     
     // Read all files from db directory
@@ -102,10 +106,10 @@ export async function GET() {
     // Sort by timestamp (newest first)
     posts.sort((a, b) => b.timestamp.localeCompare(a.timestamp));
     
-    return NextResponse.json(posts);
+    return res.status(200).json(posts);
   } catch (error) {
     console.error('Error loading posts:', error);
-    return NextResponse.json({ error: 'Failed to load posts' }, { status: 500 });
+    return res.status(500).json({ error: 'Failed to load posts' });
   }
 }
 
