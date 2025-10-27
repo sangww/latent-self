@@ -32,9 +32,12 @@ export default function Gallery() {
     try {
       setIsLoading(true);
       
+      // Get the current pathname to determine basePath
+      const basePath = '/latent-self';
+      
       // Try to load from static posts.json first (for static exports)
       try {
-        const staticResponse = await fetch('/posts.json');
+        const staticResponse = await fetch(`${basePath}/posts.json`);
         if (staticResponse.ok) {
           const data = await staticResponse.json();
           console.log('Loaded posts from static file:', data);
@@ -46,7 +49,7 @@ export default function Gallery() {
       }
       
       // Fallback to API (for server mode)
-      const response = await fetch('/api/posts');
+      const response = await fetch(`${basePath}/api/posts`);
       const data = await response.json();
       console.log('Loaded posts from API:', data);
       setPosts(data);
