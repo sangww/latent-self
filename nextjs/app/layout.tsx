@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Latent Sheep - AI Art Installation",
-  description: "Social media art installation for AI-generated images",
+  title: "Latent Self",
+  description: "by Sang Leigh",
 };
 
 export default function RootLayout({
