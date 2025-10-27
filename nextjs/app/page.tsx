@@ -79,7 +79,7 @@ export default function Gallery() {
   return (
     <div className="min-h-screen" style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#000000' }}>
       {/* Main Content */}
-      <main className="mx-auto" style={{ width: '35%', paddingTop: '32px', paddingBottom: '32px' }}>
+      <main className="mx-auto w-full md:w-[35%] px-4 md:px-0" style={{ paddingTop: '32px', paddingBottom: '32px' }}>
         {posts.length === 0 ? (
           <section className="text-center py-32" style={{ color: '#9ca3af' }}>
             <h2 className="text-2xl mb-2">Please wait...</h2>
