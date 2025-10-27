@@ -19,6 +19,17 @@ const nextConfig: NextConfig = {
     }
     return [];
   },
+  
+  webpack: (config, { isServer }) => {
+    // Exclude pages/api during static export
+    if (process.env.STATIC_EXPORT && !isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@/pages/api': false,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
