@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* Hide Next.js dev overlay and badges */
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
+
+[data-next-badge] {
+  display: none !important;
+}
