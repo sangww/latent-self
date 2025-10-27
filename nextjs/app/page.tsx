@@ -31,9 +31,24 @@ export default function Gallery() {
   const loadPosts = async () => {
     try {
       setIsLoading(true);
+      
+      // Try to load from static posts.json first (for static exports)
+      try {
+        const staticResponse = await fetch('/posts.json');
+        if (staticResponse.ok) {
+          const data = await staticResponse.json();
+          console.log('Loaded posts from static file:', data);
+          setPosts(data);
+          return;
+        }
+      } catch (e) {
+        // Static file doesn't exist, try API
+      }
+      
+      // Fallback to API (for server mode)
       const response = await fetch('/api/posts');
       const data = await response.json();
-      console.log('Loaded posts:', data);
+      console.log('Loaded posts from API:', data);
       setPosts(data);
     } catch (error) {
       console.error('Error loading posts:', error);
