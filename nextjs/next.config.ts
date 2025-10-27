@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   
   reactStrictMode: false,
   
+  // Set basePath for GitHub Pages deployment
+  basePath: process.env.STATIC_EXPORT ? '/latent-self' : '',
+  
   // In server mode, rewrite /db/* to /api/images/* for dynamic file serving
   async rewrites() {
     // Only add rewrite in server mode (not static export)
