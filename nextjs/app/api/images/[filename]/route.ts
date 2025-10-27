@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+// Tell Next.js this is a server-only route
+export const dynamic = 'force-dynamic';
+
 // Dynamic route: [filename] captures the actual filename from URL
 // Example: /api/images/2025-10-26-215555.png → filename = "2025-10-26-215555.png"
 export async function GET(

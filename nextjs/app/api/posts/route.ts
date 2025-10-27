@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+// Tell Next.js this is a server-only route
+export const dynamic = 'force-dynamic';
+
 interface Post {
   id: string;
   timestamp: string;
