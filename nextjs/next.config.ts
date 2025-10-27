@@ -19,9 +19,6 @@ const nextConfig: NextConfig = {
     }
     return [];
   },
-  
-  // Use webpack explicitly instead of Turbopack
-  webpack: (config) => config,
 };
 
 export default nextConfig;
