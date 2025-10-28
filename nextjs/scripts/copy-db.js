@@ -47,7 +47,8 @@ function generatePostsJson(dbPath) {
         const hour = timePart.substring(0, 2);
         const minute = timePart.substring(2, 4);
         const second = timePart.substring(4, 6);
-        timestamp = `${datePart} ${hour}:${minute}:${second}`;
+        // Create proper ISO timestamp
+        timestamp = `${datePart}T${hour}:${minute}:${second}.000Z`;
       }
     }
     
