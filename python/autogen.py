@@ -27,11 +27,11 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 # Define your prompt - Enhanced for Chroma style and better imagination
 instruction = """Create a 100-word Chroma prompt describing a man in a speculative world. Please be detailed and creative about some or all of the following:
 
-- World-building (fictional, surreal, absurd, strange, alternative retro, or futuristic, or anything) 
-- Clear speculative or surreal element. This element should be detailed visually and materially.
-- Consider a wide range of age (15-70), outfit, action
+- World-building (choose one or two of the following, or make up your own: fictional, surreal, historical, futuristic, space, technopunk, alternative ecology, cyborgs, utopian, dystopian, etc.)
+- Clear speculative or strange element. This element should be detailed visually.
+- Consider a wide range of age (15-70), outfit (can be in any range ofcasual, workwear, streetwear, formal, etc.), action (from specific to non-specific)
 
-Use descriptive sentences than broken words. Ensure to describe the photography elements in a way that is consistent with photorealistic image. Keep the balance between familiarity and imagination. The photo could be a bit photogenic and bold in composition and color. Ensure the photo describes not only the person but also the speculative context, but keep focus on the person at least medium shot. Overall, use analog aesthetic in its photography style.
+Use descriptive sentences than broken words. Ensure to describe the photography elements in a way that is consistent with photorealistic image. Keep the balance between familiarity and imagination. The photo could be a bit photogenic and bold in composition and color. Ensure the photo describes not only the person but also the speculative context, but keep focus on the person at least medium shot (you can choose closeup if it fits, or not facing the camera). Overall, use analog aesthetic in its photography style.
 
 Only include the prompt in your response.
 
