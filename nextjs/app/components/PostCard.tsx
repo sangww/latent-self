@@ -16,20 +16,29 @@ interface PostCardProps {
   post: Post;
   basePath: string;
   customTimestamp?: string;
+  useNST?: boolean;
 }
 
-export function formatTimestamp(timestamp: string) {
+export function formatTimestamp(timestamp: string, useNST: boolean = false) {
   const date = new Date(timestamp);
   const now = new Date();
   const diff = now.getTime() - date.getTime();
   
-  if (diff < 60000) return 'Just now';
-  if (diff < 3600000) return `${Math.floor(diff / 60000)}m ago`;
-  if (diff < 86400000) return `${Math.floor(diff / 3600000)}h ago`;
-  return date.toLocaleDateString();
+  let timeString: string;
+  if (diff < 60000) timeString = 'Just now';
+  else if (diff < 3600000) timeString = `${Math.floor(diff / 60000)}m ago`;
+  else if (diff < 86400000) timeString = `${Math.floor(diff / 3600000)}h ago`;
+  else timeString = date.toLocaleDateString();
+  
+  // Add NST (Non-Singular Time) timezone for demo posts
+  if (useNST) {
+    return `${timeString}, NST (Non-Singular Time)`;
+  }
+  
+  return timeString;
 }
 
-export default function PostCard({ post, basePath, customTimestamp }: PostCardProps) {
+export default function PostCard({ post, basePath, customTimestamp, useNST = false }: PostCardProps) {
   const displayTimestamp = customTimestamp || post.timestamp;
   
   return (
@@ -47,7 +56,7 @@ export default function PostCard({ post, basePath, customTimestamp }: PostCardPr
         }}></div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span style={{ color: '#ffffff', fontSize: '14px', fontWeight: 'bold' }}>sangularity</span>
-          <time style={{ color: '#9ca3af', fontSize: '12px' }}>{formatTimestamp(displayTimestamp)}</time>
+          <time style={{ color: '#9ca3af', fontSize: '12px' }}>{formatTimestamp(displayTimestamp, useNST)}</time>
         </div>
       </header>
 

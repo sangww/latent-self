@@ -1,0 +1,3 @@
+Korean man, forty-five, medium shot, standing in a narrow retro-futurist alley where neon paper signs flutter like subdued moths, wears a faded wool coat patched with brass circuitry and an old movie theater cardigan underneath. He cradles a translucent compass-sized orb that contains a tiny rotating weather system: miniature rain, a sun shard, dust devils moving in optical resin. His face is tired but curious, short salt-and-pepper hair, small scar along jaw. Film grain, 35mm shallow depth of field, warm cross-processed tones, soft tungsten backlight, gentle lens flare. The scene feels everyday and slightly uncanny. Subtle mechanical hum lingers always.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

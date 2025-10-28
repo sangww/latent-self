@@ -44,7 +44,7 @@ export default async function handler(
       images.map(async (file) => {
         // Extract timestamp from filename (everything before .png)
         const rawTimestamp = file.replace('.png', '');
-        // Convert format from 2025-10-26-215555 to 2025-10-26 21:55:55 (ISO format)
+        // Convert format from 2025-10-26-215555 to proper ISO format
         const parts = rawTimestamp.split('-');
         let timestamp = rawTimestamp;
         if (parts.length >= 4) {
@@ -54,7 +54,8 @@ export default async function handler(
             const hour = timePart.substring(0, 2);
             const minute = timePart.substring(2, 4);
             const second = timePart.substring(4, 6);
-            timestamp = `${datePart} ${hour}:${minute}:${second}`;
+            // Create proper ISO timestamp
+            timestamp = `${datePart}T${hour}:${minute}:${second}.000Z`;
           }
         }
         

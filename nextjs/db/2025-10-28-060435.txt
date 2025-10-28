@@ -1,0 +1,3 @@
+Korean man, fifty, stands waist-up in a fogged neon greenhouse afloat above a rusted city. He wears a patched velvet bomber over a crisp white turtleneck, thumb tracing a seam of glowing bioluminescent circuitry that pulses like koi beneath glass veins. Around him, suspended potted clouds drip silver dew and miniature paper cranes morph into brass insects, reflections doubling in his round optical goggles. He looks steady, slight smile, holding a brittle map printed on translucent polymer. Medium shot, warm Kodak Portra tones, shallow depth, film grain, soft halation, 35mm lens framing bold off-center composition and saturated teal-magenta contrast juxtaposition.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

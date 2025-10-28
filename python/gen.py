@@ -21,21 +21,17 @@ DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Define your prompt - Enhanced for Chroma style and better imagination
-instruction = """Create a detailed 100-word Chroma prompt describing a Korean man in a speculative scenario. The person is Korean but the context and environment are not necessarily Korea.
+instruction = """Create a 100-word Chroma prompt describing a man in a speculative world. Please be detailed and creative about some or all of the following:
 
-Be specific about:
-- Universe/world (past, future, retro, etc.) 
-- One speculative element to be clearly included in the context.
-- Age, appearance, outfit, action or pose
-- Environment, lighting, background, situation
+- World-building (fictional, surreal, absurd, alternative history, futuristic, technomagical, speculative biology, cyborgs, utopian/dystopian, or anything -- but only one or two elements at most)
+- Clear speculative or surreal element. This element should be detailed visually and materially.
+- Consider a wide range of age (15-70), outfit, action
 
-Think of Chroma-style photorealistic image. Please ensure to include familiarity. Do not embelish but use succinct descriptions. Keep speculative elements to one or two, to keep the balance between realism and imagination. 
-
-Include compositional description to mainly focus on the upper body of the person from closeup, but the person may not be facing the camera. Explain the photography elements in that regard. 
-
-Overall, create an analog retro aesthetic in its photography style.
+Use descriptive sentences than broken words. Ensure to describe the photography elements in a way that is consistent with photorealistic image. Keep the balance between familiarity and imagination. The photo could be a bit photogenic and bold in composition and color. Ensure the photo describes not only the person but also the speculative context, but keep focus on the person at least medium shot (you can choose closeup if it fits, or not facing the camera). Overall, use analog aesthetic in its photography style.
 
 Only include the prompt in your response.
+
+The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
 
 class SwarmUIRequest():
@@ -149,13 +145,11 @@ def generate_single_image():
         # Get SD prompt using OpenAI 4o-mini
         print("🤖 Generating prompt with OpenAI...")
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-5-mini",
             messages=[
-                {"role": "system", "content": "You are a creative AI that generates Stable Diffusion prompts. Focus on Chroma-style photorealistic aesthetic."},
+                {"role": "system", "content": "You are a creative AI that generates image generation prompts. You have a great sense of design fiction, so please not be bound and be creative in writing something that is provocative but strangely everyday."},
                 {"role": "user", "content": instruction}
             ],
-            temperature=0.8,
-            max_tokens=150,
         )
 
         # Format prompt
@@ -165,8 +159,8 @@ def generate_single_image():
         
         # Add LoRA tags and photography specs to the end of the prompt
         lora_tags = "<lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>"
-        photography_specs = "macro intimate portraiture closeup, canon 50mm f1.2 lens, sharp focus and depth of field, analog textural photo."
-        prompt = prompt + "\n\n" + photography_specs + ", " + lora_tags
+        photography_specs = ""
+        prompt = prompt + "\n" + photography_specs + " " + lora_tags
         
         print(f"📝 Generated prompt: {prompt}")
 
@@ -222,13 +216,11 @@ def generate_single_image():
         print("📱 Generating Twitter story...")
         try:
             story_response = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="gpt-5-mini",
                 messages=[
-                    {"role": "system", "content": "You are a social media writer who creates a short, casual, single-point story for a photo post. The prompt is overly descriptive, where the twitter post should be anecdoctal and coming from a personal voice by the person in the photo. Keep it short, twitter length."},
-                    {"role": "user", "content": f"Create a casual Twitter-style story based on this image prompt: {prompt}"}
+                    {"role": "system", "content": "You help create a short, casual, single-point post for a photo upload. The image prompt provided by user is overly descriptive. Keep the post first-person, personal, not too descriptive, in twitter length. Do not include 3rd person descriptors--like you won't call your reality 'retro-futuristic' even if the prompt has it. You should write it from the perspective of the person in the photo. For instance, people see the photo, so you won't need to reference all the details in the prompt. Rather describe the monologue of the person in the photo. You can opt to include 1 or 2 hashtags at the end, or also none."},
+                    {"role": "user", "content": f"Image prompt: {prompt}"}
                 ],
-                temperature=0.7,
-                max_tokens=100,
             )
             
             story = story_response.choices[0].message.content.strip()

@@ -87,7 +87,7 @@ export default function Gallery() {
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {posts.map((post) => (
-              <PostCard key={post.id} post={post} basePath={basePath} />
+              <PostCard key={post.id} post={post} basePath={basePath} useNST={true}/>
             ))}
           </div>
         )}

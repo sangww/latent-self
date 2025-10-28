@@ -1,0 +1,4 @@
+Korean man, forty-two, stands in a medium shot beneath a suspended market of glass fish and paper lanterns that breathe, recalibrating a palm-sized mechanical sundial grafted to his forearm whose opaline gears tick with slow blue bioluminescent numerals. His work jacket of oil-dark denim stitched with copper thread and stitched cloud motifs is frayed at the cuff; he adjusts a brass key with a calm, exacting gesture. The background floats in soft fog, rooftop gardens and neon algae visible. Photorealistic analog aesthetic, warm halation, 50mm shallow depth, film grain, muted cyan-teal palette, soft side lighting, gentle vignetting. subtle human fatigue.
+
+macro intimate portraiture closeup, canon 50mm f1.2 lens, sharp focus and depth of field, analog textural photo., <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

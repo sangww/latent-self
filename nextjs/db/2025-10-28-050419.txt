@@ -1,0 +1,4 @@
+In an alternate present where skyscrapers are built from luminescent bamboo, a Korean man in his late thirties stands by a window, silhouetted against a neon-lit cityscape. His attire blends traditional hanbok elements with a sleek, modern twist—think a silk jeogori with holographic patterns. His gaze is fixed on a floating digital koi fish aquarium, a common household feature that projects serene aquatic life into the air. The room is dimly lit, casting soft shadows across his contemplative face. Capture this in an analog retro aesthetic, focusing on the interplay of natural textures and futuristic lighting for a nostalgic yet surreal vibe.
+
+macro intimate portraiture closeup, canon 50mm f1.2 lens, sharp focus and depth of field, analog textural photo., <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

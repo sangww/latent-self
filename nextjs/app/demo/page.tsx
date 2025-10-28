@@ -19,7 +19,7 @@ interface Post {
 export default function DemoGallery() {
   const [allPosts, setAllPosts] = useState<Post[]>([]);
   const [displayedPosts, setDisplayedPosts] = useState<Post[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [shownPostIds, setShownPostIds] = useState<Set<string>>(new Set());
   const [isLoading, setIsLoading] = useState(true);
   const [tick, setTick] = useState(0);
   const [postTimestamps, setPostTimestamps] = useState<Map<string, number>>(new Map());
@@ -33,36 +33,36 @@ export default function DemoGallery() {
   const addNextPost = useCallback(() => {
     if (allPosts.length === 0) return;
 
-    setCurrentIndex((prev) => {
-      const nextIndex = prev + 1;
-      const reversedPosts = [...allPosts].reverse();
-      
-      // If we've displayed all posts, reset to show only the first one (newest)
-      if (nextIndex >= allPosts.length) {
-        const firstPost = reversedPosts[0];
-        setDisplayedPosts([firstPost]);
-        setPostTimestamps(new Map([[firstPost.id, Date.now()]]));
-        return 1; // Next time, show from index 1
+    setShownPostIds((prevShown) => {
+      // If we've shown all posts, reset and start over
+      if (prevShown.size >= allPosts.length) {
+        const randomPost = allPosts[Math.floor(Math.random() * allPosts.length)];
+        setDisplayedPosts([randomPost]);
+        setPostTimestamps(new Map([[randomPost.id, Date.now()]]));
+        return new Set([randomPost.id]);
       }
       
-      // Add next post at the TOP (beginning) of displayed posts
-      // Since reversedPosts is newest first, we add reversedPosts[nextIndex]
-      const newPost = reversedPosts[nextIndex];
+      // Get posts that haven't been shown yet
+      const availablePosts = allPosts.filter(post => !prevShown.has(post.id));
+      
+      // Select a random post from available posts
+      const randomPost = availablePosts[Math.floor(Math.random() * availablePosts.length)];
       const now = Date.now();
       
       setPostTimestamps((prev) => {
         const newMap = new Map(prev);
         // Set new post timestamp
-        newMap.set(newPost.id, now);
+        newMap.set(randomPost.id, now);
         return newMap;
       });
       
       setDisplayedPosts((prevPosts) => {
         // Add new post at the beginning (top)
-        return [newPost, ...prevPosts];
+        return [randomPost, ...prevPosts];
       });
       
-      return nextIndex;
+      // Add this post to the shown set
+      return new Set([...prevShown, randomPost.id]);
     });
   }, [allPosts]);
 
@@ -72,12 +72,11 @@ export default function DemoGallery() {
 
   useEffect(() => {
     if (allPosts.length > 0) {
-      // Reverse posts so newest is first
-      const reversedPosts = [...allPosts].reverse();
-      // Initialize with first post (newest)
-      setDisplayedPosts([reversedPosts[0]]);
-      setPostTimestamps(new Map([[reversedPosts[0].id, Date.now()]]));
-      setCurrentIndex(0);
+      // Initialize with a random post
+      const randomPost = allPosts[Math.floor(Math.random() * allPosts.length)];
+      setDisplayedPosts([randomPost]);
+      setPostTimestamps(new Map([[randomPost.id, Date.now()]]));
+      setShownPostIds(new Set([randomPost.id]));
     }
   }, [allPosts]);
 
@@ -176,6 +175,7 @@ export default function DemoGallery() {
                   post={post} 
                   basePath={basePath}
                   customTimestamp={fakeTimestamp}
+                  useNST={true}
                 />
               );
             })}

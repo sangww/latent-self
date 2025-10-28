@@ -1,0 +1,3 @@
+Korean man in his early forties stands in a rain-slick alley of a retrofuturist neon market where neon koi float like holographic lanterns over cracked cobblestones. He wears a faded olive mechanic's jacket stitched with brass filigree and a clear vinyl collar, hands cradling a small glass lungs device: delicate bellows of copper and pulsing blue algae that breathe steam. His expression is quietly astonished, medium shot, soft film grain, Kodak Portra palette, 35mm lens at f/2.8, tungsten dusk light catching textured skin and micro-scars. Background bokeh hints at hovering trams and paper signs fluttering. Photorealistic, analog warmth, subtle melancholy.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

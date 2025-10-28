@@ -1,0 +1,3 @@
+Korean man stands in a rain slick alley of a near future city, age forty, medium shot, shoulders angled away as he glances over his left shoulder. He wears a threadbare charcoal blazer embroidered with copper filaments that pulse faintly like a heartbeat. A translucent carotid graft snakes at his neck, anchoring bioluminescent micro orbs that orbit him slowly, casting teal and amber reflections. His right hand adjusts a brass wrist chronometer embedded with film strips, fingers ink stained. The frame is shot with analog film grain, warm Kodachrome tones, 50mm shallow depth, high contrast, rich color saturation, cinematic composition.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

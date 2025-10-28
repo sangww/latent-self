@@ -1,4 +1,0 @@
-A 35-year-old Korean man stands in a bustling retro-futuristic marketplace, vibrant neon signs flickering above him, casting colorful glows on his face. He has short, styled black hair, wearing a vintage leather jacket layered over a brightly patterned shirt. His face is partially obscured by futuristic augmented reality glasses, reflecting holographic data streams. The background showcases a blend of traditional market stalls and advanced tech displays, with warm ambient lighting creating a nostalgic feel. The composition focuses closely on his upper body, with a shallow depth of field that blurs the chaotic environment behind him, capturing a moment of contemplation amidst the vibrant chaos.
-
-macro intimate portraiture closeup, canon 50mm f1.2 lens, sharp focus and depth of field, analog textural photo., <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen
