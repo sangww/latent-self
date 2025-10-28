@@ -1,0 +1,3 @@
+Korean man, forty two, stands in a rain slick alley of suspended sky gardens and municipal skyways, adjusting an old brass radio transmitter at his hip. A translucent living vascular lattice weaves beneath his skin like luminous roots, tiny bioluminescent nodes pulsing in sync with the device. He wears a threadbare wool coat over a charcoal turtleneck, leather satchel slung low, sleeves rolled back to reveal delicate mechanical seams. Medium three quarter shot, off center composition, golden hour rim light, shallow depth of field at f/2 with 50mm, warm Kodachrome like grain, high contrast and soft vignette, photorealistic analog aesthetic.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

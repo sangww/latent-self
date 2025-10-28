@@ -23,7 +23,7 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 # Define your prompt - Enhanced for Chroma style and better imagination
 instruction = """Create a 100-word Chroma prompt describing a man in a speculative world. Please be detailed and creative about some or all of the following:
 
-- World-building (fictional, surreal, absurd, alternative history, futuristic, technomagical, speculative biology, cyborgs, utopian/dystopian, or anything -- but only one or two elements at most)
+- World-building (fictional, surreal, absurd, alternative history, futuristic, outerspace, retro, technomagical, speculative biology, cyborgs, utopian/dystopian, or anything -- but only one or two elements at most)
 - Clear speculative or surreal element. This element should be detailed visually and materially.
 - Consider a wide range of age (15-70), outfit, action
 
