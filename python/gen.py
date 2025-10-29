@@ -21,17 +21,17 @@ DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Define your prompt - Enhanced for Chroma style and better imagination
-instruction = """Create a 100-word Chroma prompt describing a man in a speculative world. Please be detailed and creative about some or all of the following:
+instruction = """Create a 100-word Chroma prompt for image generation. Please be detailed and creative about the following:
 
-- World-building (choose one or two of the following, or make up your own: fictional, surreal, historical, futuristic, space, technopunk, alternative ecology, cyborgs, utopian, dystopian, etc.)
-- Clear speculative or strange element. This element should be detailed visually.
-- Consider a wide range of age (15-70), outfit (can be in any range ofcasual, workwear, streetwear, formal, etc.), action (from specific to non-specific)
+Select exactly one setting from the list, or create your own: [science fiction, extreme nature, retro 50s/60s/70s household, ubertechnological urban landscape, post-industrial, neo-modern hyper-minimalistic, cyborgs and androids, extraterrestrial environmental landscape, non-carbon-based ecosystem, post-apocalyptic, etc.].  
+Select exactly one object or world element, speculative or fantastical, specific and visually clear and interesting.
+Select exactly one outfit and age range (15-70), or create your own].  
+Select exactly one action or composition.
+Select exactly one artistic style, like minimalism, retro, maximalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Tarkovsky, James Cameron, Quentin Tarantino, Ridley Scott, Black Mirror, etc.
 
-Use descriptive sentences than broken words. Ensure to describe the photography elements in a way that is consistent with photorealistic image. Keep the balance between familiarity and imagination. The photo could be a bit photogenic and bold in composition and color. Ensure the photo describes not only the person but also the speculative context, but keep focus on the person at least medium shot (you can choose closeup if it fits, or not facing the camera). Overall, use analog aesthetic in its photography style.
+Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep the balance between familiarity and imagination. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
-Only include the prompt in your response.
-
-The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
+Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
 
 class SwarmUIRequest():
@@ -147,8 +147,8 @@ def generate_single_image():
         response = client.chat.completions.create(
             model="gpt-5-mini",
             messages=[
-                {"role": "system", "content": "You are a creative AI that generates image generation prompts. You have a great sense of design fiction, so please not be bound and be creative in writing something that is provocative but strangely everyday."},
-                {"role": "user", "content": instruction}
+                {"role": "system", "content": "Your role is to help generates image generation prompts. You have a great sense of design fiction, focused on provocative but strangely everyday elements."},
+                {"role": "system", "content": instruction}
             ],
         )
 
@@ -218,7 +218,7 @@ def generate_single_image():
             story_response = client.chat.completions.create(
                 model="gpt-5-mini",
                 messages=[
-                    {"role": "system", "content": "You help create a short, casual, single-point post for a photo upload. The image prompt provided by user is overly descriptive. Keep the post first-person, personal, not too descriptive, in twitter length. Do not include 3rd person descriptors--like you won't call your reality 'retro-futuristic' even if the prompt has it. You should write it from the perspective of the person in the photo. For instance, people see the photo, so you won't need to reference all the details in the prompt. Rather describe the monologue of the person in the photo. You can opt to include 1 or 2 hashtags at the end, or also none."},
+                    {"role": "system", "content": "You help create a short, casual, single-point writing for social media photo post. Keep the post first-person, personal, not too descriptive, in twitter length. Do not include 3rd person descriptors--like you won't call your reality 'retro-futuristic' even if the prompt has it. You should write it from the perspective of the person in the photo. For instance, people see the photo, so you won't need to reference all the details in the prompt. Rather describe the monologue of the person in the photo. You can opt to include 1 or 2 hashtags at the end, or also none."},
                     {"role": "user", "content": f"Image prompt: {prompt}"}
                 ],
             )

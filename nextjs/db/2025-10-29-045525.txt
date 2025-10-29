@@ -1,0 +1,3 @@
+Korean man in a post-industrial pastoral setting, framed in a medium shot inside a rusted glass greenhouse where a single oversized brass water pump stands entwined with ivy. He wears a dust-streaked tan leather duster over a patched denim jumpsuit. Three-quarter profile, hand pressed to fogged glass, eyes on a suspended holographic bee hovering above a jar of soil. Analog photography aesthetic, Tarkovsky-like surrealism, muted earthy palette pierced by neon cyan highlights, soft film grain, long focal length, shallow depth of field, cinematic framing, subtle backlight creating rim glow and reflected condensation textures, and a faint distant tractor silhouette outside.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

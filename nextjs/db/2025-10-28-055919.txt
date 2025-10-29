@@ -1,3 +1,0 @@
-Korean man in his late forties stands at a rain-slick quay under neon-smoky twilight, medium shot capturing chest-up; he wears a patched wool trench with copper rivets and a glass collar humming faintly. A mechanical garland of origami butterflies, folded from translucent circuit-paper, settles along his shoulder, each wing pulsing a slow teal like breathing circuitry. He adjusts a brass monocle fused to a tiny sundial, fingers ink-stained. Background shows an impossible skyline of stacked analog towers and tethered zeppelins, softly out of focus. Shot on 35mm film with warm grain, soft tungsten glow, shallow depth-of-field and bold color contrast.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen
