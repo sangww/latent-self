@@ -23,7 +23,7 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 # Define your prompt - Enhanced for Chroma style and better imagination
 instruction = """Create a 100-word Chroma prompt for image generation. Please be detailed and creative about the following:
 
-Select exactly one setting from the list, or create your own: [science fiction, extreme nature, retro 60s or 70s household, ubertechnological urban landscape, post-industrial, neo-modern hyper-minimalistic, cyborgs and androids, extraterrestrial environmental landscape, non-carbon-based ecosystem, post-apocalyptic, etc.].  
+Select exactly one setting from the list, or create your own: [science fiction, extreme nature, retro 60s or 70s household, ubertechnological urban landscape, post-industrial, neo-modern minimalistic, cyborgs and androids, extraterrestrial environmental landscape, non-carbon-based ecosystem, post-apocalyptic, etc.].  
 Select exactly one object or world element, speculative or fantastical, specific and visually clear and interesting.
 Select exactly one outfit and age range (15-70), or create your own].  
 Select exactly one action or composition.
