@@ -1,0 +1,3 @@
+Korean man, age 42, medium shot three-quarter profile in robotic urbanity: a rain-glossed rooftop beside a suspended glass tram over neon alleys. He wears a matte-black trench embroidered with faint circuitry and a worn leather glove on one hand. Bioluminescent moss pulses along the tram's seams, casting teal highlights on his jaw. He leans on a rusted railing, gaze fixed off-frame toward distant mechanical cranes, cigarette smoke thin in damp air. Photorealistic analog film, shallow depth, grainy Kodak style, high-contrast neo-noir palette, cinematic lighting inspired by Ridley Scott and Wong Kar-wai, soft lens flares, subtle reflections in puddles, late-night mood.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen
