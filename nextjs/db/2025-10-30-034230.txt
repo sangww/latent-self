@@ -1,0 +1,3 @@
+Korean man in a post-industrial warehouse: a rusted vending machine levitates a foot above cracked concrete, its glass face sprouting moss and soft incandescent tubes. He is 52, wearing a faded olive bomber jacket over a white tee, rough stubble, hands callused. Medium three-quarter shot, hand resting on the hovering machine, eyes gazing past camera toward a shaft of sickly tungsten light. Photorealistic analog photograph with Tarkovskian composition, long take mood, subtle film grain, muted desaturated palette with a single warm neon accent, shallow depth of field, cinematic high-contrast lighting, quiet, uncanny domesticity. soft rain streaks on broken factory windows.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen
