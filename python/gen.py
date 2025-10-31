@@ -25,11 +25,13 @@ instruction = """Create a 100-word Chroma prompt for image generation. Please be
 
 Select exactly one setting from the list, or create your own: [science fiction, extreme environments, retro 60s or 70s household, robotic urbanity, post-industrial serenity, neo-modern minimalistic, cyborgs and androids, extraterrestrial, non-carbon nature, post-apocalyptic, etc.].  
 Select exactly one world element, speculative or fantastical, specific and visually clear and interesting.
-Select exactly one outfit and age range (15-70), or create your own].  
+Select exactly one occupation or outfit or age range (15-70), or create your own].  
 Select exactly one action or composition.
 Select exactly one artistic style, like minimalism, retro, maximalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Tarkovsky, James Cameron, Quentin Tarantino, Ridley Scott, Black Mirror, etc.
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep the balance between familiarity and imagination. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
+
+Exclude topics around: terrarium, hologram, bio-luminescent
 
 Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """

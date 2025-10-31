@@ -1,0 +1,3 @@
+Korean man stands in robotic urbanity at dusk, rain-slick neon streets reflected on metal facades; hovering municipal maintenance drones with warm amber repair lights drift behind him. He is thirty-eight, wearing a weathered brown leather pilot jacket and gray knit scarf, medium close-up three-quarter profile, hand raised to a transparent visor, breath visible in cold air. Neo-noir photorealism inspired by Ridley Scott: cinematic shallow depth, Kodak Portra film grain, subdued teal-and-amber palette, strong rim light and soft key, high dynamic range, subtle lens flare, intimate mood, analog bokeh, crisp skin texture, stray rain droplets on face, cinematic grain and contrast.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen
