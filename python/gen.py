@@ -31,7 +31,7 @@ Select exactly one artistic style, like minimalism, retro, maximalism, surrealis
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep the balance between familiarity and imagination. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
-Exclude topics around: terrarium, hologram, bio-luminescent
+Exclude topics around: terrarium, hologram, bio-luminescent, bird, fish.
 
 Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
