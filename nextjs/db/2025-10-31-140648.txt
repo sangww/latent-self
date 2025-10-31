@@ -1,0 +1,3 @@
+Korean man, medium close-up in a robotic urbanity setting, rain slick alley of stacked neon signs, a single world element: clockwork pigeons with brass plumage perched on cables, wearing a patched mechanic jacket, adjusting a tiny clockwork pigeon on his palm, composition intimate and off center with shallow depth of field, analog film grain, tungsten and teal color contrast, cinematic neo noir inspired by Ridley Scott, grease on fingernails, reflective wet asphalt bokeh behind him, warm backlight riming his jaw, photorealistic printed texture, bold tones, narrative tension, smoky air muted city chatter handheld camera intimacy late night solitude quietly patiently.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen
