@@ -27,7 +27,7 @@ Select exactly one setting from the list, or create your own: [science fiction, 
 Select exactly one world element, speculative or fantastical, specific and visually clear and interesting.
 Select exactly one occupation or outfit or age range (15-70), or create your own].  
 Select exactly one action or composition.
-Select exactly one artistic style, like minimalism, retro, maximalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Tarkovsky, James Cameron, Quentin Tarantino, Ridley Scott, Black Mirror, etc.
+Select exactly one artistic style, like minimalism, retro, maximalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Tarkovsky, James Cameron, Quentin Tarantino, Steven Spielberg, Ridley Scott, Black Mirror, etc.
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep the balance between familiarity and imagination. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
