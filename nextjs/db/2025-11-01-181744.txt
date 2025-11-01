@@ -1,0 +1,3 @@
+Korean man in his mid-30s, a robotics restorer in a grease-streaked cardigan, stands in a robot-modern home: warm teak furniture, matte chrome appliances, and a living wall of slow-moving metallic ivy. He holds a small brass clockwork heart at medium closeup, gaze down, not facing the camera, fingers stained with oil. Floating dust motes catch amber window light; a tilted shelf of vintage cameras looms behind. Photographed like an analog surrealism piece, Wes Anderson-inspired color symmetry, high-grain film, bold saturated tones, soft shallow depth of field, intimate, uncanny domestic still life composition. and a small analog radio playing distant static.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

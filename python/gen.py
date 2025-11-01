@@ -25,8 +25,8 @@ instruction = """Create a 100-word Chroma prompt for image generation. Please be
 
 Select exactly one setting from the list, or create your own: [extreme nature, retro alternative 60s or 70s, post-modern minimalistic, robot modern home, etc.]  
 Select exactly one world element, speculative or fictional, specific and visually clear and interesting.
-Select exactly one occupation or outfit or age range (15-70), or create your own].  
-Select exactly one action or composition.
+Select exactly one occupation or (casual) outfit or age range (15-70), or create your own].  
+Select exactly one action or composition, indoor or outdoor.
 Select exactly one artistic style, like minimalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep the balance between familiarity and bold absurdism. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.

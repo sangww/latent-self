@@ -1,0 +1,3 @@
+Korean man in a robot modern home kitchen, a 40-year-old watchmaker in a rumpled gray cardigan and narrow tie, sits medium close with his hands hovering over a living brass-gear ivy that climbs the chrome cabinets. He uses jeweler's tweezers to place a tiny gear like a leaf, not facing the camera, expression focused. Retro-surreal minimalism, Wes Anderson color palette and symmetry, film-grain Kodak Portra aesthetic, 50mm lens, shallow depth of field, warm tungsten ambient light, saturated teals and mustard, precise composition, quiet absurdity, photorealistic analog photograph with soft vignetting and studio-quality contrast, subtle motion blur of falling component dust.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

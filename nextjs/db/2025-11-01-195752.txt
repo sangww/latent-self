@@ -1,0 +1,3 @@
+Korean man in his early fifties, wearing a worn denim chore jacket, stands in a robot-modern home kitchen lit by warm film grain. A small domestic weather bubble — a glass sphere hovering at elbow height, snowing faintly inside — floats beside him. He adjusts a brass dial on a vintage analog AI tape recorder perched on the counter; the recorder's magnetic reels display handwritten runes. Medium close-up, three-quarter profile, shallow depth, cinematic color palette inspired by Wes Anderson with precise symmetry and warm teal contrasts. Photorealistic analog photography, bold composition, tactile surfaces, soft film grain, intimate mood. subtle melancholy.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen
