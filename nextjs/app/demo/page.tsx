@@ -34,12 +34,25 @@ export default function DemoGallery() {
     if (allPosts.length === 0) return;
 
     setShownPostIds((prevShown) => {
-      // If we've shown all posts, reset and start over
+      // If we've shown all posts, reset and start over with 5 random posts
       if (prevShown.size >= allPosts.length) {
-        const randomPost = allPosts[Math.floor(Math.random() * allPosts.length)];
-        setDisplayedPosts([randomPost]);
-        setPostTimestamps(new Map([[randomPost.id, Date.now()]]));
-        return new Set([randomPost.id]);
+        // Select 5 random posts
+        const shuffled = [...allPosts].sort(() => Math.random() - 0.5);
+        const randomPosts = shuffled.slice(0, Math.min(5, allPosts.length));
+        
+        // Generate random timestamps for each post (spread over 1-5 hours ago)
+        const timestamps = new Map<string, number>();
+        randomPosts.forEach((post, index) => {
+          // Random minutes ago between 60 and 300 minutes (1-5 hours)
+          const minutesAgo = 60 + Math.floor(Math.random() * 240);
+          const timestamp = Date.now() - minutesAgo * 60000;
+          timestamps.set(post.id, timestamp);
+        });
+        
+        setDisplayedPosts(randomPosts);
+        setPostTimestamps(timestamps);
+        console.log(`Posts displayed (reset): ${randomPosts.length}/${allPosts.length}`);
+        return new Set(randomPosts.map(p => p.id));
       }
       
       // Get posts that haven't been shown yet
@@ -58,7 +71,9 @@ export default function DemoGallery() {
       
       setDisplayedPosts((prevPosts) => {
         // Add new post at the beginning (top)
-        return [randomPost, ...prevPosts];
+        const newPosts = [randomPost, ...prevPosts];
+        console.log(`Posts displayed: ${newPosts.length}/${allPosts.length}`);
+        return newPosts;
       });
       
       // Add this post to the shown set
@@ -72,11 +87,23 @@ export default function DemoGallery() {
 
   useEffect(() => {
     if (allPosts.length > 0) {
-      // Initialize with a random post
-      const randomPost = allPosts[Math.floor(Math.random() * allPosts.length)];
-      setDisplayedPosts([randomPost]);
-      setPostTimestamps(new Map([[randomPost.id, Date.now()]]));
-      setShownPostIds(new Set([randomPost.id]));
+      // Initialize with 5 random posts
+      const shuffled = [...allPosts].sort(() => Math.random() - 0.5);
+      const randomPosts = shuffled.slice(0, Math.min(5, allPosts.length));
+      
+      // Generate random timestamps for each post (spread over 1-5 hours ago)
+      const timestamps = new Map<string, number>();
+      randomPosts.forEach((post) => {
+        // Random minutes ago between 60 and 300 minutes (1-5 hours)
+        const minutesAgo = 60 + Math.floor(Math.random() * 240);
+        const timestamp = Date.now() - minutesAgo * 60000;
+        timestamps.set(post.id, timestamp);
+      });
+      
+      setDisplayedPosts(randomPosts);
+      setPostTimestamps(timestamps);
+      setShownPostIds(new Set(randomPosts.map(p => p.id)));
+      console.log(`Posts displayed: ${randomPosts.length}/${allPosts.length}`);
     }
   }, [allPosts]);
 

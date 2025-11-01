@@ -1,0 +1,3 @@
+Korean man, age 47, in a robot-modern home kitchen, medium shot three-quarter profile, cradling a small brass domestic assistant robot with visible gears on his forearm. Surrealism with Wes Anderson-inspired symmetry: muted mustard and teal palette, precise geometry of shelving and chrome appliances. Analog photography: 35mm film grain, soft tungsten glow, warm Kodak Portra tonality, shallow depth of field, slight light leak. He wears a faded denim jacket over a linen shirt, fingers stained with coffee, gaze turned toward a narrow window framing a distant neon skyline. Photorealistic, intimate, quietly uncanny, bold composition and saturated midtones, evoking domestic future nostalgia.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

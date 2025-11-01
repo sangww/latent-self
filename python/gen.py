@@ -23,7 +23,7 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 # Define your prompt - Enhanced for Chroma style and better imagination
 instruction = """Create a 100-word Chroma prompt for image generation. Please be detailed and creative about the following:
 
-Select exactly one setting from the list, or create your own: [extreme environments, retro 60s or 70s household, post-modern minimalistic, alternative present, etc.]  
+Select exactly one setting from the list, or create your own: [extreme nature, retro alternative 60s or 70s, post-modern minimalistic, robot modern home, etc.]  
 Select exactly one world element, speculative or fictional, specific and visually clear and interesting.
 Select exactly one occupation or outfit or age range (15-70), or create your own].  
 Select exactly one action or composition.
