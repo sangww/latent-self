@@ -1,0 +1,3 @@
+Korean man in a robot modern home, bathed in pixelated sunlight panels that cast soft blocky shadows across lacquered surfaces. 45-year-old, medium closeup indoors, seated at a mint Formica counter, hands steady as he tunes a vintage toaster fused with tiny servos and brass gears, profile turned away from camera. Analog film grain, warm Kodak tones, shallow depth of field, imperfect light leaks. Surrealism with Wes Anderson-like symmetry and subdued pastels, combining domestic calm and uncanny domestic tech. Composition focuses on texture: chipped enamel, brushed metal, scuffed palms, dust motes caught in the square sunlight. a faint blue clock ticking.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

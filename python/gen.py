@@ -21,15 +21,16 @@ DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 # Define your prompt - Enhanced for Chroma style and better imagination
-instruction = """Create a 100-word Chroma prompt for image generation. Please be detailed and creative about the following:
+instruction = """Create a 100-word Chroma prompt for image generation.
 
-Select exactly one setting from the list, or create your own: [extreme nature, retro alternative 60s or 70s, post-modern minimalistic, robot modern home, etc.]  
-Select exactly one world element, speculative or fictional, specific and visually clear and interesting.
-Select exactly one occupation or (casual) outfit or age range (15-70), or create your own].  
-Select exactly one action or composition, indoor or outdoor.
-Select exactly one artistic style, like minimalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
+The goal is to produce photographic capture of a man in a speculative, everyday fiction, or alternative world. Yet, emphasis on like a everyday, casual, strangely different setting.
 
-Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep the balance between familiarity and bold absurdism. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
+Select an setting, but please consider unique options. Feel free to permute with [extreme nature, retro alternative 60s or 70s, post-modern minimalistic, robot modern home, etc.] but be creative. Add technology, objects or background elements that enrich the setting.
+Select occupation or outfit or age range (15-70).  
+Select action or composition consistent with the setting.
+Select artistic style, like minimalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
+
+Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Be creative and don't stick to traditional settings only. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
 Exclude topics around: terrarium, hologram, globe, bio-luminescent, bird, fish.
 
