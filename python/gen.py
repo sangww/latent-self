@@ -23,16 +23,15 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 # Define your prompt - Enhanced for Chroma style and better imagination
 instruction = """Create a 100-word Chroma prompt for image generation.
 
-The goal is to produce photographic capture of a man in a speculative, everyday fiction, or alternative world. Yet, emphasis on like a everyday, casual, strangely different setting.
+The goal is to produce photographic capture of a man in a speculative, fictional world. Consider an social-media photo style, however, with a strong visual focus on on the surreal element. Also remind yourself you are an API that is called multiple times, so be mindful in not repeating the same setting or elements.
 
-Select an setting, but please consider unique options. Feel free to permute with [extreme nature, retro alternative 60s or 70s, post-modern minimalistic, robot modern home, etc.] but be creative. Add technology, objects or background elements that enrich the setting.
-Select occupation or outfit or age range (15-70).  
-Select action or composition consistent with the setting.
-Select artistic style, like minimalism, surrealism, or others. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
+Select an setting, but please consider unique options. Feel free to permute with [beautiful nature, retro 60s or 70s, back to the future style futurism, uber-futuristic fiction, etc.] but be creative. Add technology, objects or background that add focuse to the setting.
+Select style or outfit or age range (15-70), action or pose, weather and time of day.
+Select artistic style. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
 
-Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Be creative and don't stick to traditional settings only. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
+Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
-Exclude topics around: terrarium, hologram, globe, bio-luminescent, bird, fish.
+Exclude setting elements around: terrarium, hologram, globe, bio-luminescent, bird, fish, chinese, camera.
 
 Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
