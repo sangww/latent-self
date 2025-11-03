@@ -1,0 +1,3 @@
+Korean man in his mid-thirties, wearing a faded 1970s mustard corduroy jacket and a sleek chrome prosthetic forearm, stands on a foggy elevated monorail platform at dusk. He holds a steaming metal thermos that glows faintly with cool teal light. A string of suspended analog clocks float at varying heights behind him, their hands tick subtly out of sync, creating a surreal suburban futurism. Shot like an intimate social feed photo, medium closeup, half-turned gaze off-frame, warm film grain, shallow depth, muted pastel palette, symmetrical composition, inspired by Wes Anderson's precision, Spielbergian warmth and Black Mirror unease, analog film aesthetic.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

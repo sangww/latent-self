@@ -1,0 +1,3 @@
+Korean man, age 32, medium-close portrait on a misty seaside cliff at twilight, wearing a retro 1970s brown corduroy suit and knitted turtleneck, leaning against a wind-swept signpost. Surreal element: a small antique CRT TV nestles in his open palm, flickering with static and distant city traffic. A chrome mechanical automaton horse sculpture stands in the background among rusted neon signs and a flickering streetlamp. Analog film aesthetic: Kodak Portra warmth, soft grain, light leaks, shallow depth, symmetrical composition à la Wes Anderson with Spielbergian suspense and Black Mirror unease. Social-media candid, slightly off-center, cinematic color grading, subtle backlighting glow.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

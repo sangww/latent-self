@@ -1,0 +1,3 @@
+Korean man, mid-40s, wearing a faded mustard blazer and vintage astronaut sweater, stands in a pastel 1970s gas station on a cliffside at golden hour. He holds a cracked Polaroid of a monolithic highway sign; a sleek retro-futuristic scooter with analog dials sits behind him. Light fog and warm sunlight create film grain and lens flares. Medium close-up, three-quarter profile, contemplative, one hand in pocket, distant gaze. Photorealistic analog photograph aesthetic, cinematic symmetry à la Wes Anderson meets Spielbergian wonder, tinged with Black Mirror unease, rich color grading, shallow depth of field, tactile grain. soft backlight, urban sea sky horizon.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

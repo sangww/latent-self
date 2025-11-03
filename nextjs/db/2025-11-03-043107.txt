@@ -1,0 +1,3 @@
+Korean man in his early thirties, medium close-up, seated on the hood of a matte teal 1970s station wagon parked on a mossy rooftop garden under a dusky double-sun sky. He wears a faded mustard windbreaker, aviator sunglasses, and a mechanical wrist pod with exposed gears and a tiny rotating compass. Rain falls upward in thin silver threads, wetting concrete and leaving luminous rings. He looks off-frame, half-smile, candid social-media pose. Photorealistic analog film, Kodak 800 grain, shallow depth of field, warm color grading, cinematic composition inspired by Wes Anderson and Black Mirror, subtle lens flare, thoughtful, uncanny everyday futurism.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

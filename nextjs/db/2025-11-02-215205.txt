@@ -1,0 +1,3 @@
+Korean man, mid-30s, medium close-up on a cracked coastal highway overlook where retro 1970s synth cars float inertly above the cliffs like parked memories. He wears a faded mustard trench, aviator scarf, and polished pocket device pulsing soft cyan. He studies an analog wristmap, profile lit by golden hour sun and cool neon from a distant diner. Subtle surreal: a perfectly still rain curtain suspended midair behind him, each drop reflecting miniature highways. Composition echoes Wes Anderson symmetry and Spielberg warmth, Black Mirror unease. Shot as film grain 35mm, shallow depth, candid social-media selfie aesthetic, slightly off-center, contemplative. moody, intimate.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

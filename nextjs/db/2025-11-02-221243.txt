@@ -1,0 +1,3 @@
+Korean man, age 45, medium closeup in a cliffside 1970s futurist roadside observatory at damp golden hour, mist rolling from the sea. He wears mustard corduroy blazer, cream turtleneck, aviator scarf, adjusting a small chrome wrist console that pulses soft blue. Symmetrical composition, Wes Anderson color palette meets Black Mirror unease, Spielberg warmth in facial lighting. Rain-slick neon sign and a drifting autonomous monorail in background, chrome thermos on ledge. Photorealistic analog film look: Kodak Portra tones, subtle grain, shallow depth of field, 35mm lens, natural rim light, slight vignette, candid social-media snapshot vibe, quiet smile, distant traffic lights glowing.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

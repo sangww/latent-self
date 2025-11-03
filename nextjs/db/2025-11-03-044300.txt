@@ -1,0 +1,3 @@
+Korean man sits on a sun-bleached 1970s parking rooftop at golden hour, medium close-up, three-quarter profile. He wears a faded mustard windbreaker, silver wrist chronometer with analog gears, and a thin VR headband pushed up like a headlamp. Around him, retro-futuristic vending machines and a crooked neon sign flicker; a slow-moving delivery drone hovers beyond, casting soft magenta reflections. The sky has a surreal double sunset, heat haze like melted film. Photorealistic analog photography, grainy Kodak color, cinematic composition blending Wes Anderson symmetry, Spielberg warmth and Black Mirror unease, candid social-media vibe, subtle lens flare, moody shallow depth of field.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

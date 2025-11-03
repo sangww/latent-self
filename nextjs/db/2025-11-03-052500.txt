@@ -1,0 +1,3 @@
+Korean man, mid-40s, in a faded mustard corduroy blazer and charcoal turtleneck, caught in a medium closeup like a vintage social feed post. He looks slightly away, holding an old transistor radio modified with brass dials and a tiny mechanical drone resting on his wrist. Behind him, a deserted 1970s highway diner fused with retro-future signage and a low-slung monorail track, neon reflecting on wet asphalt at dusk. Moody tungsten and cool twilight mix, soft film grain, square crop, shallow depth, warm cinematic symmetry inspired by Wes Anderson, Spielberg warmth and Black Mirror uncanny tech — photorealistic analog style, subtle flare.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen
