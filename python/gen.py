@@ -25,13 +25,13 @@ instruction = """Create a 100-word Chroma prompt for image generation.
 
 The goal is to produce photographic capture of a man in a speculative, fictional world. Consider an social-media photo style, however, with a strong visual focus on on the surreal element. Also remind yourself you are an API that is called multiple times, so be mindful in not repeating the same setting or elements.
 
-Select an setting, but please consider unique options. Feel free to permute with [beautiful nature, retro 60s or 70s, back to the future style futurism, uber-futuristic fiction, etc.] but be creative. Add technology, objects or background that add focuse to the setting.
+Select an setting, but please consider unique options. Feel free to permute with [beautiful nature, historical fiction, retro 60s or 70s, back to the future style futurism, uber-futuristic fiction, etc.] but be creative. Add technology, objects or background that add focuse to the setting.
 Select style or outfit or age range (15-70), action or pose, weather and time of day.
 Select artistic style. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
-Exclude setting elements around: terrarium, hologram, globe, bio-luminescent, bird, fish, chinese, camera.
+Exclude setting elements around: terrarium, hologram, globe, bio-luminescent, bird, fish, chinese, camera, cigarette.
 
 Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
@@ -61,7 +61,7 @@ class SwarmUIRequest():
             "session_id": "",  # Will be set by getSession()
             "donotsave": True,
             "prompt": prompt,
-            "negativeprompt": "lowres, blurry, cgi",
+            "negativeprompt": "lowres, blurry, cgi, china",
             "model": "chroma/chroma-unlocked-v48-detail-calibrated.safetensors",  # Your Chroma model
             "width": 896,
             "height": 1152,
