@@ -1,0 +1,3 @@
+Korean man, mid-40s, medium close-up, leaning against rusted tramcar in an overgrown 1960s subway concourse reclaimed by saplings and neon filament signs, wearing a patched tweed coat with a luminous wrist device and retro aviator goggles pushed to his brow, gazing off-frame, rain-slick tiles, late twilight with sodium streetlamps and warm cinematic rim light, vintage film grain, shallow depth of field, candid social-media portrait vibe, cinematic composition inspired by Wes Anderson symmetry and Spielberg emotional warmth with Black Mirror speculative tech undertones, tactile analog color palette, 35mm film, soft bokeh, subtle motion blur from passing tram, moody urban melancholy tone.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

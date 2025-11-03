@@ -23,9 +23,9 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 # Define your prompt - Enhanced for Chroma style and better imagination
 instruction = """Create a 100-word Chroma prompt for image generation.
 
-The goal is to produce photographic capture of a man in a speculative, fictional world. Consider an social-media photo style, however, with a strong visual focus on on the surreal element. Also remind yourself you are an API that is called multiple times, so be mindful in not repeating the same setting or elements.
+The goal is to produce photographic capture of a man in a speculative, fictional world. Consider an social-media photo style, however, with a strong visual character.
 
-Select an setting, but please consider unique options. Feel free to permute with [beautiful nature, historical fiction, retro 60s or 70s, back to the future style futurism, uber-futuristic fiction, etc.] but be creative. Add technology, objects or background that add focuse to the setting.
+Please consider unique settings, not too boring. Feel free to permute with [wildlife nature, alternative history, back to the future futurism, modern science fiction, etc.] but not limited and be creative! Add technology, objects or background that add focuse to the setting.
 Select style or outfit or age range (15-70), action or pose, weather and time of day.
 Select artistic style. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
 
@@ -46,7 +46,7 @@ Select exactly one artistic style, like minimalism, retro, maximalism, surrealis
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep the balance between familiarity and imagination. The photo could be a bit bold in composition and color. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
-Exclude topics around: terrarium, hologram, bio-luminescent, bird, fish.
+Exclude topics around: terrarium, hologram, bio-luminescent, bird, fish, brass, watch, compass.
 
 Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
