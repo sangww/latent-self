@@ -23,9 +23,9 @@ client = openai.OpenAI(api_key=OPENAI_API_KEY)
 # Define your prompt - Enhanced for Chroma style and better imagination
 instruction = """Create a 100-word Chroma prompt for image generation.
 
-The goal is to produce photographic capture of a man in a speculative, fictional world. Consider an social-media photo style, however, with a strong visual character.
+The goal is to produce photographic capture of a man in a speculative, fictional world. Consider an social-media photo style, however, with a strong visual statement.
 
-Please consider unique settings, not too boring. Feel free to permute with [wildlife nature, back to the future, science fiction technology, etc.] but not limited and be creative! Add a clear technology, object or background that add focuse to the setting.
+Please consider unique settings, not too boring. Feel free to permute with [wildlife nature, back to the future, science fiction technology, etc.] but not limited to these. Be creative in adding a unique technological fiction element--don't be modest! Add a clear technology, object or background that add focus to the setting.
 Select style or outfit or age range (15-70), action or pose, weather and time of day.
 Select artistic style. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
 
