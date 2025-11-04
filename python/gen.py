@@ -25,13 +25,13 @@ instruction = """Create a 100-word Chroma prompt for image generation.
 
 The goal is to produce photographic capture of a man in a speculative, fictional world. Consider an social-media photo style, however, with a strong visual character.
 
-Please consider unique settings, not too boring. Feel free to permute with [wildlife nature, alternative history, back to the future futurism, modern science fiction, etc.] but not limited and be creative! Add technology, objects or background that add focuse to the setting.
+Please consider unique settings, not too boring. Feel free to permute with [wildlife nature, back to the future, science fiction technology, etc.] but not limited and be creative! Add a clear technology, object or background that add focuse to the setting.
 Select style or outfit or age range (15-70), action or pose, weather and time of day.
 Select artistic style. Get inspiration from cinematic masters, like Wes Anderson, Steven Spielberg, Black Mirror, etc.
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
-Exclude setting elements around: terrarium, hologram, globe, bio-luminescent, bird, fish, chinese, camera, cigarette.
+Exclude setting elements around: terrarium, hologram, globe, bio-luminescent, bird, fish, chinese, camera, cigarette, watch.
 
 Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
