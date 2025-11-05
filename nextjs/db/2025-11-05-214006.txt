@@ -1,0 +1,3 @@
+Korean man, 34, in a faded bomber jacket and crisp white tee, leans against a rain-slick neon tram platform at dusk, medium close-up, half-faced away from lens, soft smirk. Behind him, a suspended autonomous street-sign drone — a matte-black cylinder with flickering paper maps and warm amber indicator rings — hovers above puddles reflecting skyscraper LEDs. Light drizzle, glossy surfaces, cinematic framing inspired by Spielbergian warmth and Black Mirror unease, muted film grain, analog color palette, shallow depth, social-media candid aesthetic, subtle lens flare, hands in pockets, focused on textured skin and weary optimism, photorealistic, 35mm film look, soft backlight.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen

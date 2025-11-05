@@ -1,0 +1,3 @@
+Korean man in his late 30s, wearing a faded denim jacket and reflective insulated scarf, medium closeup three-quarter profile, gazing past frame; dusk rain mists the neon-soaked alley behind him, tungsten and teal highlights, soft film grain and 35mm Portra tones. He cradles an archaic personal rail-token linked to a humming pocket fusion meter clipped to his belt, a small humming orb of mechanical gears and LEDs, half-burnished brass and polymer. Leaning against a retrofuturistic vending kiosk, he exudes quiet defiance, cinematic symmetry with Blade Runner noir mood and Wes Anderson color precision, Spielberg warmth, Black Mirror unease, urban solitude.
+ <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
+autogen
