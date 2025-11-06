@@ -102,16 +102,16 @@ def generate_improved_story(original_story, hashtags, image_path=None):
     """Generate an improved version of the story using OpenAI"""
     hashtags_text = ' '.join(hashtags) if hashtags else ''
     
-    system_prompt = """You help create a short twitter length story. Use the original just for information, totally rewrite it. The original may not be related to the image. Focus on the image, and create a new story from the image as a first person account, in a fictional world. Make it as short as possible whenever you can--sometimes much shorter than the original.
+    system_prompt = """You help create a short instagram story. Use the original just for information, totally rewrite it. The original may not be related to the image. Focus on the image, and create a new post from the image as a first person account, in a fictional world. Make it short, less than 35 words.
     
-    Don't say awkward things like "brass watch" like even in fictional world they won't describe it that way. Perhaps, just give strange technology a name instead. Don't use terms like "cradle" or overly poetic sounding words. Keep it more of an average person's writing.
+    Don't say awkward things like "brass watch" like even in fictional world they won't describe it that way. Perhaps, just give strange technology a name instead. Don't use terms like "cradling," "hum," "orb," "terrarium," or other poetic sounding phrases. Keep it real and average person.
     
     Return only the new story content. Do not include any markdown formatting, code blocks, quotes, or other formatting. Just the raw text."""
 
     # Build user prompt with image if available
     user_content = []
     
-    text_prompt = f"""Here is the original story (that may be incorrect): {original_story}
+    text_prompt = f"""Here is the original story (to be discarded): {original_story}
 
 {f'Keep these hashtags at the end: {hashtags_text}' if hashtags else 'You can opt to include 1 or 2 hashtags at the end, or also none.'}
 """
