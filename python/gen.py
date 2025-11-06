@@ -31,7 +31,7 @@ Select artistic style. Get inspiration from cinematic masters, like Wes Anderson
 
 Combine these choices into a succinct, cohesive, photorealistic description in analog photography style. Keep focus on the person at medium shot or closeup, but the person does not need to face the camera.
 
-Exclude setting elements around: terrarium, hologram, globe, bio-luminescent, bird, fish, chinese, camera, cigarette, watch.
+Exclude setting elements around: terrarium, hologram, globe, bio-luminescent, bird, fish, chinese, camera, cigarette, watch, humming.
 
 Only include the prompt in your response. The person is Korean man but this has nothing to do with the story, just start the prompt with 'Korean man'. but don't emphasize any other Korean elements in the prompt.
 """
