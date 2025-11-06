@@ -1,3 +1,0 @@
-Korean man, fifty, stands waist-up on a flooded subway platform beneath a glass dome of humming bioluminescent lichens, holding a wet brass compass whose needle flows like mercury. He wears a patched military trench coat over a knit turtleneck, sleeves rolled, water beading on worn leather gloves. His expression is steady, eyes looking slightly off-camera, hair damp and matte. The scene is lit by warm analog film tones, high grain, shallow depth of field focusing on his face and the shifting compass; reflections ripple in the shallow water, neon posters blur into painterly color fields behind him. Photorealistic medium shot.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

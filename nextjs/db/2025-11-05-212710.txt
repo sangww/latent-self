@@ -1,3 +1,0 @@
-Korean man stands in a rain-slick neon alley, medium close-up, candid social feed vibe. Age ~ thirty, wearing a patched leather coat with a high-collar scarf, hair damp. He holds a steaming paper cup beside a compact street kiosk: a brass, clockwork air-purifier drone dock spitting soft steam and amber lights — retro-future tech focal point. He glances off-frame, expression wry, condensation on glass surfaces. Twilight drizzle, cinematic rim lighting, shallow depth of field, analog film grain, color palette like Wes Anderson meets Blade Runner, Spielbergian warmth, subtle Spielberg/Black Mirror tension, photorealistic, 35mm film aesthetic, natural skin tones, quiet confidence.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

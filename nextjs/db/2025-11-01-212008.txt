@@ -1,3 +1,0 @@
-Korean man, 42-year-old, seated in a robot modern home kitchen, medium close-up, indoor: he holds a steaming ceramic mug and glances sideways, not facing the camera. Copper clockwork vines, delicate gears and leaf-like cogs, crawl along matte white cabinets and a stainless island, tidy domestic repair drones sleep in a ceramic bowl. Photoreal analog film look, slightly grainy, warm tungsten light, saturated pastels, precise symmetrical framing with surrealism and a touch of Wes Anderson whimsy, shallow depth of field, crisp textures, intimate everyday absurdity, bold color contrast, cinematic storytelling. soft film flare across his temple and worn wristwatch, slightly smiling.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

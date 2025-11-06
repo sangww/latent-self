@@ -1,3 +1,0 @@
-Korean man stands in a flooded city square at dusk, age fifty, wearing a threadbare navy work jacket patched with luminous algae seams, sleeves rolled, hands cupping a slow-breathing mechanical koi that pulses warm copper light. The city behind him is half-submerged, retrofuturist signage blurred by oil-sheen reflections. He looks slightly off-camera, composed and weathered, salt and grease on his jaw. Medium shot, shallow depth of field, grainy 35mm film aesthetic, warm tungsten highlights and cool shadow fill, subtle motion blur on distant boats. Textured bokeh, film scratches, high dynamic range emulation for tactile realism, and quiet incandescent hope lingers.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

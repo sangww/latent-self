@@ -1,3 +1,0 @@
-Korean man, age 45, stands in a post-industrial serenity scene: rusted cranes retooled into hanging studios and verdant conveyor-terraces cascading moss and saplings. He leans in a medium closeup against a reclaimed steel railing, profile turned away from camera, cigarette ember glowing, oil-smudged hands clasping a well-worn wrench. Soft late-afternoon sun slices through particulate air, creating cinematic beams and analog film grain. Tarkovsky-inspired minimalism meets photorealism: muted desaturated tones with a single teal accent, shallow depth of field, high dynamic range, contemplative quiet, precise composition, tactile surface detail. Nostalgic city hums beyond the frame.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

@@ -1,3 +1,0 @@
-Korean man mid 40s architect in a charcoal utilitarian coat stands in a post modern minimalistic atrium where slender glass monoliths slowly ooze molten mirror like candle wax, medium closeup three quarter profile, adjusting his collar and glancing toward a drifting seam of light; analog film grain, soft Kodak Portra tones, shallow depth of field, precise symmetrical framing inspired by Wes Anderson with surrealist tension, natural window light, muted pastels punctuated by a single saturated teal, tactile concrete textures, subtle lens flare, cinematic color grading, quiet uncanny atmosphere, photorealistic, believable yet oddly impossible. shot on vintage 50mm film stock grainy.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

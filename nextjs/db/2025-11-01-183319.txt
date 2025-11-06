@@ -1,3 +1,0 @@
-Korean man in his mid-40s, medium-close three-quarter profile inside a sleek robot-modern home, warm teak and pale mint walls punctuated by chrome. He wears stained beige overalls, rolled sleeves, and repairs a small transparent domestic robot with articulated brass limbs that cradles a stack of analog film canisters. Composition is intimate: hands in frame, soft directional window light, shallow depth of field, tactile grain and slight vignette. Surrealist minimalism with a Wes Anderson palette — precise symmetry, muted pastels, ironic domestic calm — shot like Kodak Portra film, photorealistic, quiet, slightly uncanny. With subtle lens flare and warm film saturation.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

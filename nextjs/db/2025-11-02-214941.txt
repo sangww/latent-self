@@ -1,3 +1,0 @@
-Korean man, late 30s, medium close-up, standing on a rain-slick roadside at orange twilight beside a neon motel and a row of antique CRT monitors repurposed as wind-up servers. He wears a 1970s mustard suit with a worn leather overcoat and a chrome wrist chronometer, glancing aside with weary curiosity. Film grain, Kodak Portra palette, shallow depth of field, slight motion blur from drizzle. Composition borrows Wes Anderson symmetry, Spielbergian nostalgic lighting, Black Mirror unsettling tech presence. Vintage transistor radio and a cassette tape flutter on the hood of a parked convertible, wet reflections and warm lens flare, analog photograph.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

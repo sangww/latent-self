@@ -1,3 +1,0 @@
-Korean man mid 40s in a faded mustard 1970s windbreaker and tailored suspenders, medium close portrait on a cracked plaza bench beneath towering concrete pines, holding a vintage transistor radio pulsing soft teal, not facing the lens, contemplative and slightly bewildered, surreal detail: a slow parade of miniature mechanical paper airplanes folding themselves in the air behind him, cinematic symmetry recalling Wes Anderson with Spielberg warmth and a Black Mirror uncanny undercurrent, analog film grain and Kodak Portra palette, shallow depth of field, high dynamic range, social story frame feel, urban ruins retrofuturism, soft neon reflections on his wristwatch, photorealistic.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

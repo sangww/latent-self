@@ -5,7 +5,6 @@ import path from 'path';
 interface Post {
   id: string;
   timestamp: string;
-  prompt: string;
   story?: string;
   filename: string;
   type: string;
@@ -59,24 +58,7 @@ export default async function handler(
           }
         }
         
-        const promptFile = file.replace('.png', '.txt');
-        
-        let prompt = 'No prompt available';
         let type = 'generated';
-        
-        try {
-          const promptPath = path.join(dbPath, promptFile);
-          if (fs.existsSync(promptPath)) {
-            const content = fs.readFileSync(promptPath, 'utf8');
-            const lines = content.split('\n');
-            prompt = lines[0] || 'No prompt available';
-            if (lines.length > 1) {
-              type = lines[1].trim() || 'generated';
-            }
-          }
-        } catch (err) {
-          console.error(`Error reading prompt for ${file}:`, err);
-        }
         
         // Try to load story
         let story = '';
@@ -93,7 +75,6 @@ export default async function handler(
         return {
           id: file,
           timestamp,
-          prompt,
           story,
           filename: file,
           type,

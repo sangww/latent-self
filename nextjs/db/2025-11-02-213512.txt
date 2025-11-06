@@ -1,3 +1,0 @@
-Korean man, early 40s, medium shot on a rusty rooftop tram turned greenhouse in a retro-futuristic city, wearing a patched 1970s suit and a rubber apron, holding a steaming stainless kettle beside a mechanical bonsai pruning drone, looking away from camera with cigarette smoke curling, neon signage and analog film grain, surrealism meets Wes Anderson symmetry with Spielbergian golden hour, smartphone story aspect ratio, warm color grading, photorealistic, tactile textures, shallow depth of field, cinematic composition, intentional imperfections like light leaks and dust, a quiet, uncanny everyday moment that reads like a shared social-media confession, vertical crop for story, intimate.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

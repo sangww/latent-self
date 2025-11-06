@@ -1,4 +1,0 @@
-Korean man in his early fifties stands in a narrow subway station turned greenhouse, medium shot framed at chest height. He wears a worn brown coat sewn with miniature glass terrariums; inside each, tiny windmills churn and moss glows faintly bioluminescent. A translucent umbrella shelters a micro-weather system: rain falls in slow loops beneath its dome and condenses into pearlescent beads on his collar. His expression is calm, eyes catching warm window light. Photorealistic analog aesthetic: 35mm film grain, shallow depth of field, soft Kodak Portra tones, subtle vignetting and occasional light leak, natural skin textures, honest, slightly imperfect presence.
-
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

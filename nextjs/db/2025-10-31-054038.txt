@@ -1,3 +1,0 @@
-Korean man, age 45, in worn navy mechanic's coveralls with oil-stained pockets and a folded white scarf, medium close-up in a post-industrial serenity setting: a derelict steelworks converted into a quiet greenhouse where bioluminescent ivy and moss carpet rusted gantries. He cradles a small glass terrarium emitting warm cyan light, fingers traced by soot, gaze averted toward distant shafts of golden dust. Photorealistic analog film portrait, shallow depth of field, soft grain, warm highlight bloom, muted palettes with vivid teal accents, Tarkovsky-inspired cinematic surrealism, composed like a quiet still from a reclaimed future, smoke curling in the background, nostalgic and strange.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

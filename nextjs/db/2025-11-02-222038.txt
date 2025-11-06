@@ -1,3 +1,0 @@
-Korean man, mid-30s, in a mustard corduroy jacket and faded denim, stands in a sun-drenched 1970s roadside observatory repurposed as a solar jukebox, holding a battered Polaroid scanner. He looks slightly off-frame, medium closeup, cigarette-free, thoughtful pose. Late golden hour light, heat haze, soft film grain, lens flare from a low sun. Background: rusted neon sign, stacked analog servers with flashing tape reels, a paper map pinned with metallic clips. Style: cinematic symmetry and warm palette like Wes Anderson meets Spielbergian wonder, with Black Mirror eeriness. Photorealistic, analog Kodak film aesthetics, 50mm lens. Soft bokeh and muted cyan and teal.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

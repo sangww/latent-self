@@ -1,3 +1,0 @@
-Korean man, mid-30s, medium close-up in dusk light aboard a derelict monorail platform framed by rusted neon signs and an autonomous delivery drone docking arm behind him. He wears a faded bomber jacket, crisp white shirt, and a cracked synthetic eyepiece over one temple; thumb brushing the eyepiece as if toggling memory playback. Mild drizzle, wet reflections, cinematic tungsten-neon mix, shallow depth of field, warm film grain, Kodak Portra tones. Social-media candid aesthetic with precise composition inspired by Wes Anderson symmetry and Black Mirror unease, Spielberg warmth in the eyes. Photorealistic analog portrait, intimate, slightly off-center, soft rim lighting. foreboding.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

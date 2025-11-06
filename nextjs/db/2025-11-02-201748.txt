@@ -1,3 +1,0 @@
-Korean man in his late 40s sits on a cracked vinyl bench inside a retro-futuristic laundromat at dawn, sun slanting through frosted glass. He wears a faded mechanic's jacket patched with small digital tally tags, hands stained with oil, holding a vintage instant camera at chest level but not looking at lens. Around him, stacked autonomous dry-cleaning lockers emit muted status LEDs, a potted ficus and a wall clock with reversed numbers anchor the scene. Medium closeup, shallow depth, grainy analog film, color palette like Wes Anderson meets Black Mirror minimalism, meticulous framing, quiet cinematic tension, everyday speculative realism tone.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

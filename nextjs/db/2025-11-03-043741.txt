@@ -1,3 +1,0 @@
-Korean man in his early 30s, medium-close portrait, turned three-quarters away, standing on a rooftop drive-in theater reclaimed by wildgrass and pastel neon signs. He wears a faded 1970s windbreaker and glossy vinyl trousers; small mechanical maintenance drone hovers behind a line of cracked CRT projectors and rotary payphones. Twilight drizzle catches neon rim light, warm tungsten fill and cool blue hour sky. Surreal detail: a ring of vintage VHS tapes slowly rotates around him like planets. Kodak film grain, shallow depth, symmetrical composition inspired by Wes Anderson with Spielberg warmth and Black Mirror unease, candid social-media aesthetic, analog intimacy.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

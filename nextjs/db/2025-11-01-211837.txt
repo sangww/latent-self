@@ -1,3 +1,0 @@
-Korean man in his mid-40s, wearing a tailored silver jumpsuit with subtle reflective seams, stands in a sunlit robot modern home kitchen, adjusting a small mechanical vine of brass and polymer that hums with soft warm LEDs woven through leaves; behind him, a wall of matte white appliances and a window framing a city of stacked monorails; medium close-up, three-quarter profile, cinematic symmetry, saturated pastel palette, analog film grain, shallow depth of field, low-angle slightly off-center shot inspired by Wes Anderson and subtle Black Mirror unease, photorealistic, bold color contrast and precise minimalist composition. warm morning light, reflective chrome accents.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

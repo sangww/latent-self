@@ -1,3 +1,0 @@
-Korean man, medium close up in a robotic urbanity setting, wears a worn oil leather courier jacket, adjusting brass goggles with steady hand. Around him, mechanical pigeons with brass wings and etched gears alight on chrome ledges; sunlight filtered through suspended monorail tracks casts cinematic shadows. Three quarter profile, eyes off camera, shallow depth of field isolates textured skin and weathered fabric. Photorealistic analog film aesthetic, neo noir cinematic realism inspired by Ridley Scott: high contrast, warm tones, fine grain, precise composition, subtle lens flare. Mood: quietly uncanny and intimate, ritual amid city machinery. weathered delivery satchel hangs at hip.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

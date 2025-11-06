@@ -1,3 +1,0 @@
-Korean man in his thirties sits at a rain-slick rooftop diner in a retro-futuristic 1970s Seoul alternative, neon signs softened by mist. He wears a worn leather jacket with a silver wrist-mounted analog device, cigarette between fingers, looking past the frame. Close-up, shallow depth, grainy film texture, warm magenta highlights and teal shadows. In the background an overgrown monorail entwines with sculptural bonsai streetlamps, a delivery drone parked like a vintage scooter. Mood is wistful, cinematic — equal parts Wes Anderson framing and Blade Runner atmosphere, social-media candid aesthetic, dusk, light drizzle, 35mm film, photorealistic. Smoke curling around his shoulders.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

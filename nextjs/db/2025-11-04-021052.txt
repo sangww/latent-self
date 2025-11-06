@@ -1,3 +1,0 @@
-Korean man in his early 40s wearing a retrofuturistic commuter jacket leaning against a cracked neon vending kiosk on a rain-slick rooftop garden at twilight. He holds a battered analog drone controller with a glowing mechanical orchid projection profile turned away from the lens with a half-smile. Background shows monorail ribbons and rusted solar billboards under a distant thunderstorm and warm tungsten rim light. Cinematic composition inspired by Wes Anderson symmetry Black Mirror unease and Spielberg warmth. Medium close up shallow depth grainy film stock ISO 400 35mm lens candid social media aesthetic introspective uncanny everyday future soft neon spill.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

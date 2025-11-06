@@ -1,3 +1,0 @@
-Korean man in a robot modern home, age 42, medium closeup three-quarter profile, not facing camera, seated on a chrome sofa beneath a window of brushed steel. He cradles a slow-growing mechanical bonsai with brass branches curling into clockwork leaves, its cord plugged into the wall like a houseplant. Soft morning light, shallow depth, warm analog film grain, saturated pastels with a single teal accent. Composition balances domestic precision and uncanny detail, faint fingerprints on polished surfaces, muted hum of servos suggested by motion blur. Surrealism à la Wes Anderson, photorealistic, bold symmetry, intimate, quietly absurd. Soft shadows sculpt geometry.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

@@ -1,3 +1,0 @@
-Korean man in a post-modern minimalistic apartment, a 52 year old bespoke tailor stands in a medium close up, adjusting a lapel while not looking at the camera. Around him, thin translucent gravity ribbons, softly colored bands that curve and suspend everyday objects, thread through the room and hold a suspended spool of thread and scissors. He wears a charcoal slim fit suit, white shirt and tailored sleeves, hands precise. Shot on analog 35mm film, shallow depth of field, warm grain, muted pastels with one saturated teal ribbon, composition inspired by Wes Anderson and Black Mirror, subtly absurd and intimate.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

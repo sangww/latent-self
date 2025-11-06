@@ -1,3 +1,0 @@
-Korean man in his early forties stands waist-up in a sunlit workshop in a city where buildings grow like layered books. He wears a thrifted tweed jacket over a patched band tee and leather work gloves. He adjusts a brass-and-glass respirator that houses living moss lungs and tiny clockwork fireflies, their glow pooling like slow mercury. Through a dusty window stacked pagoda-silos float and pneumatic trams hiss on ropes. The medium-shot composition is slightly off-center, captured on 35mm film with warm grain, soft highlights, shallow depth, and faint light leak. He looks tired but resolved, hands mid-motion, skin real, unretouched.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

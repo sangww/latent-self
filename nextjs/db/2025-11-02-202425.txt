@@ -1,3 +1,0 @@
-Korean man in his late 30s sits at a sunlit kitchen table beside a small retro 1970s refrigerator retrofitted with matte chrome smart dials, medium close-up, wearing a thrifted mustard blazer and worn denim, hair casually tousled. He examines an analog pocket camera that prints instant strips shaped like micro-architectural blueprints. The room is a minimalist, overgrown apartment where an indoor cliff of moss and concrete meets a floor-to-ceiling window showing a rainy neon skyline. Cinematic symmetry, color palette inspired by Wes Anderson and Black Mirror, soft film grain, shallow depth of field, candid Instagram-journal vibe, slight surrealism, subtle tension.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

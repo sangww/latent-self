@@ -1,3 +1,0 @@
-Korean man in a retro 1960s household kitchen, wearing a worn mustard suit and navy turtleneck, seated at a sunlit dinette. A levitating vintage magnetic typewriter hovers above the table beside a stack of typed pages; he turns one sheet with deliberate fingers. Medium close-up, profile gaze turned away from camera, shallow depth of field showing patterned linoleum and rotary phone blurred behind. Cinematic, Wes Anderson-inspired symmetry, warm saturated analog film tones, gentle grain, high dynamic range of morning light, artful composition balancing nostalgia and quiet surrealism, uncanny domestic stillness captured like a staged family portrait with cinematic lens flare.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

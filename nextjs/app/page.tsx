@@ -7,7 +7,6 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 interface Post {
   id: string;
   timestamp: string;
-  prompt: string;
   story?: string;
   filename: string;
   type: string;

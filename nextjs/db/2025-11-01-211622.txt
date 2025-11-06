@@ -1,3 +1,0 @@
-Korean man in a robot modern home, a late 30s watchmaker wearing a grease stained cardigan carefully adjusts a pocket sized mechanical sun, a brass orb with visible coiled filaments, at a cluttered wooden workbench. Medium close up three quarter profile, hands and delicate tools in sharp focus, shallow depth of field softens chrome appliances and small articulated helper robots in the background. Warm window light slants across polished brass, casting cinematic shadows. Surrealist minimalism with a Wes Anderson sense of symmetry, analog film grain, slight cross processed saturation and precise staging, a photorealistic portrait of an uncanny domestic ritual.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

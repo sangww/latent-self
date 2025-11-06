@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Latent Self",
-  description: "by Sang Leigh",
+  description: "Digital Art by Sang Leigh",
 };
 
 export default function RootLayout({

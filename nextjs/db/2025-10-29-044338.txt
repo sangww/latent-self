@@ -1,3 +1,0 @@
-Korean man stands in a digital urbanism alley, backlit by holographic billboards and rain-slick neon reflections. He wears a worn linen suit threaded with thin LED seams, collar up. A single object: a cracked, floating holographic metro map projector casting blue-orange glyphs over his face. Medium close-up, half-profile, hand extended to touch a drifting glyph, eyes not facing camera. Photorealistic analog film aesthetic, Kodachrome warmth, light leak and grain, shallow depth of field, cinematic neo-noir mood inspired by Ridley Scott, strong asymmetric composition, saturated cyan and amber palette creating an intimate, uncanny everyday futurism, subtle lens flare and urban fog.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

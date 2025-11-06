@@ -1,3 +1,0 @@
-Korean man, age 42, in a tailored mustard corduroy suit sits in a retro alternative 1960s living room lined with avocado wallpaper and teak shelves, cradling a pocket-sized weather machine that emits a delicate rain spiral; medium close-up, three-quarter profile, soft analog film grain, muted saturated colors, cinematic Wes Anderson composition with symmetrical clutter and a slightly off-center subject, tactile realism, shallow depth of field, warm tungsten light, hands in frame adjusting brass dials, a stack of vinyl records and a rotary phone blurred in background, quietly absurd, evocative, photorealistic. subtle film scratches and warm grain add nostalgic authenticity today.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

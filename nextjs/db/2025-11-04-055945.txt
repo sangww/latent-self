@@ -1,3 +1,0 @@
-Korean man in his late 30s, medium shot, wearing a worn leather bomber and a retro-futuristic surgeon's scarf, sits on a rain-slick subway platform at dusk beneath teal and ochre neon. He looks away, one hand resting on a brass personal chronometron—an analog satellite communicator with glowing vacuum tubes—while a compact orbital drone hovers behind him like a metallic moth. Moody 35mm film grain, shallow depth of field, tungsten highlights, symmetrical composition inspired by Wes Anderson with Black Mirror tension and Spielberg warmth. Soft drizzle, cool air, reflective puddles, cinematic contrast, photorealistic, natural skin tones, subdued color grading, golden rimlight.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

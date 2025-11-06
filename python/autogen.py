@@ -156,6 +156,7 @@ def dream():
             txt.write(prompt)
         
         # Generate Twitter-style story
+        story_filename = f'db/{t}_story.txt'
         print("📱 Generating Twitter story...")
         try:
             story_response = client.chat.completions.create(
@@ -170,14 +171,17 @@ def dream():
             print(f"📱 Generated story: {story}")
             
             # Save story locally
-            with open(f'db/{t}_story.txt', 'w', encoding='utf-8') as story_file:
+            with open(story_filename, 'w', encoding='utf-8') as story_file:
                 story_file.write(story)
             
-            print(f"✅ Story saved: db/{t}_story.txt")
+            print(f"✅ Story saved: {story_filename}")
             
         except Exception as story_error:
             print(f"⚠️ Story generation failed: {story_error}")
             story = "Story generation failed"
+            # Save fallback story
+            with open(story_filename, 'w', encoding='utf-8') as story_file:
+                story_file.write(story)
 
         # Save image with proper base64 handling
         try:
@@ -205,18 +209,16 @@ def dream():
 
         # Post to art installation server
         try:
-            # Prepare image data for upload
-            image_data = {
-                'filename': f'{t}.png',
-                'prompt': prompt,
-                'timestamp': datetime.now().isoformat(),
-                'type': 'generated'
-            }
-            
-            # Upload image file
-            with open(f'db/{t}.png', 'rb') as img_file:
-                files = {'image': img_file}
-                data = image_data
+            # Upload image and story files
+            with open(f'db/{t}.png', 'rb') as img_file, open(story_filename, 'rb') as story_file:
+                files = {
+                    'image': ('.png', img_file, 'image/png'),
+                    'story': ('_story.txt', story_file, 'text/plain')
+                }
+                data = {
+                    'timestamp': datetime.now().isoformat(),
+                    'type': 'generated'
+                }
                 
                 server_response = requests.post(f'{SERVER_URL}/api/upload', 
                     files=files,

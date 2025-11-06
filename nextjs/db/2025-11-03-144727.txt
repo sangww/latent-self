@@ -1,3 +1,0 @@
-Korean man, mid-40s, medium close-up, candid social-media feel: he sits on the wing of a rusted retrofuturistic courier plane parked in a flooded rice paddy at golden hour under low clouds. He wears a patched wool coat, worn leather pilot gloves, and a brass wrist chronometer, hair wind-tossed. He holds a small mechanical insect-drone like an old lighter at chest height, profile turned from the lens, eyes distant. Light is warm, grainy analog film, cinematic composition mixing Wes Anderson symmetry with Black Mirror tone and Spielberg warmth. Rain-scented air, reflecting neon advertisements across distant concrete terraces, soft bokeh, subtle motion.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

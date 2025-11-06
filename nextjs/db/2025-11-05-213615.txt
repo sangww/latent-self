@@ -1,3 +1,0 @@
-Korean man, 32, medium-closeup portrait in analog film style: candid social-media aesthetic, slightly sweaty under neon rain at twilight, wearing a patched beige trench and vintage knitted turtleneck, adjusting a thin translucent retinal implant that emits soft teal filaments from his temple, holding a palm-sized mechanical courier drone with brass gears and a humming solar core, rooftop skyline with staggered glass-greenhouse towers and a slow glowing maglev arch in the bokeh, composition inspired by Wes Anderson symmetry, Spielberg warmth, Black Mirror tension, shallow depth of field, grainy film, cinematic color grading, natural expression, looking past the frame. urban future grit.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

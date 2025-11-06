@@ -123,19 +123,20 @@ class SwarmUIRequest():
             print(f"Error making request to SwarmUI: {e}")
             return None
 
-def upload_to_server(image_path, prompt, story, timestamp):
-    """Upload image and metadata to Next.js API"""
+def upload_to_server(image_path, story_path, timestamp):
+    """Upload image and story file to Next.js API"""
     try:
         url = f"{SERVER_URL}/api/upload"
         
-        # Read the image file
-        with open(image_path, "rb") as f:
+        # Read both image and story files
+        with open(image_path, "rb") as img_file, open(story_path, "rb") as story_file:
             # Use just ".png" extension so server only uses timestamp
-            files = {"image": (".png", f, "image/png")}
+            files = {
+                "image": (".png", img_file, "image/png"),
+                "story": ("_story.txt", story_file, "text/plain")
+            }
             data = {
                 "timestamp": timestamp,
-                "prompt": prompt,
-                "story": story,
                 "type": "autogen"
             }
             
@@ -231,6 +232,7 @@ def generate_single_image():
             f.write(prompt)
         
         # Generate Twitter-style story
+        story_filename = f"db/{t}_story.txt"
         print("📱 Generating Twitter story...")
         try:
             story_response = client.chat.completions.create(
@@ -245,7 +247,6 @@ def generate_single_image():
             print(f"📱 Generated story: {story}")
             
             # Save story locally
-            story_filename = f"db/{t}_story.txt"
             with open(story_filename, "w", encoding="utf-8") as f:
                 f.write(story)
             
@@ -254,6 +255,9 @@ def generate_single_image():
         except Exception as story_error:
             print(f"⚠️ Story generation failed: {story_error}")
             story = "Story generation failed"
+            # Save fallback story
+            with open(story_filename, "w", encoding="utf-8") as f:
+                f.write(story)
         
         print(f"✅ Image saved: {filename}")
         print(f"✅ Prompt saved: {prompt_filename}")
@@ -261,7 +265,7 @@ def generate_single_image():
         
         # Upload to Next.js API if available
         print("📤 Uploading to Next.js server...")
-        upload_success = upload_to_server(filename, prompt, story, t)
+        upload_success = upload_to_server(filename, story_filename, t)
         
         if upload_success:
             print("✅ Successfully uploaded to Next.js server")

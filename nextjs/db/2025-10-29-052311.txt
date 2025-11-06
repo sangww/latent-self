@@ -1,3 +1,0 @@
-Korean man in an ubertechnological urban landscape, medium close-up analog photograph, 38-year-old wearing a worn leather jacket with faint LED seams, cradling a cracked holo-camera—an antique film camera grafted with neon circuitry—light leaking like paper from its aperture. Neon rain reflects on his hands and the camera; distant towers smear into bokeh. He looks past the frame, expression unreadable, side-lit by teal and amber. Surreal neo-noir composition inspired by Ridley Scott and Tarkovsky: high-contrast, grainy film stock, precise depth of field, cinematic mood, subtle color shifts, intimate and uncanny. Soft lens flare kisses metallic skin, quiet city hum beneath. night.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

@@ -3,7 +3,6 @@ import Image from 'next/image';
 interface Post {
   id: string;
   timestamp: string;
-  prompt: string;
   story?: string;
   filename: string;
   type: string;

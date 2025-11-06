@@ -1,3 +1,0 @@
-Korean man in a retro 1970s street setting, chestnut brick facades, mustard storefronts, world element: pocket sized weather oracles, brass cubes with tiny glass storm throats, clipped to his belt. He is a bicycle courier. Medium close up three quarter profile, a tiny brass compass visible near his collar, neon signs in bokeh behind him. Photorealistic analog film look, warm grain, saturated Wes Anderson inspired color palette, careful symmetrical composition, surrealist undertones: ordinary city logic slightly bent by quaint improbable mechanics, intimate, uncanny and quietly comic. Soft backlight on brass edges. Film grain glints like coal dust on lenses. Timeless.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

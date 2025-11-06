@@ -52,23 +52,7 @@ function generatePostsJson(dbPath) {
       }
     }
     
-    const promptFile = file.replace('.png', '.txt');
-    let prompt = 'No prompt available';
     let type = 'generated';
-    
-    try {
-      const promptPath = path.join(dbPath, promptFile);
-      if (fs.existsSync(promptPath)) {
-        const content = fs.readFileSync(promptPath, 'utf8');
-        const lines = content.split('\n');
-        prompt = lines[0] || 'No prompt available';
-        if (lines.length > 1) {
-          type = lines[1].trim() || 'generated';
-        }
-      }
-    } catch (err) {
-      console.error(`Error reading prompt for ${file}:`, err);
-    }
     
     let story = '';
     try {
@@ -84,7 +68,6 @@ function generatePostsJson(dbPath) {
     return {
       id: file,
       timestamp,
-      prompt,
       story,
       filename: file,
       type,

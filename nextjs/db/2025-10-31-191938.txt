@@ -1,3 +1,0 @@
-Korean man in a retro 1970s household kitchen, mid-40s wearing a tailored mustard polyester suit and narrow tie, seated at a chrome Formica table. World element: an enormous, peeling floral wallpaper that subtly morphs into printed circuit traces, trailing behind a stovetop tea kettle. He sips from a porcelain cup, medium closeup in profile, soft side light from a slatted window, vintage Kodachrome grain and warm color cast, surrealism meets Wes Anderson symmetry, saturated ochres and teal accents, shallow depth of field, tactile film texture, cinematic framing, quiet uncanny domesticity, photorealistic analog photograph. subtle lens flare, late afternoon mood. nostalgic.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

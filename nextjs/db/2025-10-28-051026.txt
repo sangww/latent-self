@@ -1,4 +1,0 @@
-Korean man, late 30s, close-up upper body, turned three-quarters away from camera, soft stubble, ash-brown hair, wearing a vintage brown leather jacket over a ribbed turtleneck, in an alternate near-future Seoul rooftop at dusk with neon haze. Surreal element: small mechanical moths embedded in his skin, gently fluttering through translucent clockwork cavities — emphasize: floating mechanical moths emerging from pores. He holds a cigarette between fingers, eyes distant. Analog retro film aesthetic: 1970s 50mm, shallow depth of field, warm grain, light leaks, muted colors, cinematic rim light, naturalistic shadows, photorealistic texture, Instagram-friendly composition, soft bokeh, subtle lens flare, honest mood.
-
-macro intimate portraiture closeup, canon 50mm f1.2 lens, sharp focus and depth of field, analog textural photo., <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

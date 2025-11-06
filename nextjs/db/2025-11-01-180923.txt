@@ -1,3 +1,0 @@
-Korean man in a robot modern home, a 45-year-old in a patched boiler suit, medium close-up profile, carefully soldering a biotextile cable that grows like braided ivy from a vintage lamp. The room is tidy minimal-tech: matte metallic surfaces, warm wood, and a small window framing a neon rain-lit courtyard. Emphasize tactile detail — grease-stained fingers, soft gleam on the cable, tiny sparks. Photorealistic analog film grain, shallow depth of field, saturated pastel palette, surrealist cinematic composition inspired by Wes Anderson with a Black Mirror edge, quiet domestic strangeness, bold framing and precise symmetry. soft backlight and warm shadows. cinematic grain.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

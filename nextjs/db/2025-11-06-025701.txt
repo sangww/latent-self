@@ -1,3 +1,0 @@
-Korean man, 34, medium-close portrait in a rainy neon undercity at dusk, wearing a scuffed leather bomber and wool scarf, leaning against a tile pillar, looking sideways. A swarm of palm-sized personal drones hovers behind him like a kinetic halo, their chrome shells reflecting pink and teal signage; a translucent ocular implant glows faintly at his temple. Film-grain, 35mm analog color, shallow depth, warm Spielberg light with Wes Anderson symmetry and Black Mirror tension. Social-media square crop, candid-posed, slight smile, urban mist, wet pavement reflections, long shadows, cinematic bokeh, editorial street-photography mood, soft lens flare and muted film-like color grading.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

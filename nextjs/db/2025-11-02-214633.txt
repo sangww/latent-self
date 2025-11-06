@@ -1,3 +1,0 @@
-Korean man in his early forties, medium close-up, standing on a cracked salt plain at twilight beneath a suspended grid of old neon tube signs and analog satellite dishes; retro-1970s jumpsuit with faded mustard collar, brass wrist device pulsing soft amber light. He holds a steaming paper cup, gaze off-frame, slight smirk. Wind tousles hair, distant thunder, cinematic Wes Anderson symmetry with Spielberg warmth and Black Mirror unease. Photographic, film grain, Kodak Portra tones, shallow depth of field, 50mm lens feel, naturalistic rim light, muted saturation, subtle flare, staged social-post candid — uncanny everyday futurism captured like an analog photograph.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

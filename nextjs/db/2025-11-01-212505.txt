@@ -1,3 +1,0 @@
-Korean man in a retro alternative 1970s diner, wearing a tailored mustard suit, medium closeup leaning against a lacquered neon counter. A speculative element: his wrist sports a small mechanical planetarium — tiny rotating gears and brass arms mapping imaginary constellations — embedded into flesh like a scar. He doesn't look at the camera, gazing toward a window where an orange traffic monorail glides by. Cinematic, surrealist framing inspired by Wes Anderson: saturated complementary colors, precise symmetry, warm film grain, Kodak Portra tones, soft cinematic bokeh, high-contrast shadows, intimate analog portrait. slightly uncanny, everyday and strangely familiar. moody warm glare.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

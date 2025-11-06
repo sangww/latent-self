@@ -1,3 +1,0 @@
-Korean man in a black mirror dystopia, medium-close shot as he adjusts a cracked wrist-mounted holographic debt ledger that flickers with neon glyphs. He wears a worn synthetic trench coat with reflective seams and analog film badges, collar up, rain-slick city visible through a blurred window behind him. Three-quarter profile, soft rim light sculpts his cheek, hologram casts cyan and magenta highlights across tired skin. Photoreal, analog photography aesthetic inspired by Ridley Scott and Black Mirror: high contrast, subtle film grain, anamorphic lens bokeh, saturated neon, shallow depth of field, tense quiet mood, cinematic framing and a distant siren glows.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

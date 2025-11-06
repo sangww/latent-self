@@ -1,3 +1,0 @@
-Korean man in his early thirties sits in a retro-futuristic rooftop diner built into a cliffside over a neon desert, medium closeup, half-turned from the camera. He wears a faded 1970s mustard blazer and vinyl collar shirt, holding a steaming metal teacup while an antique mechanical assistant robot perches on the chrome counter behind him. Soft golden-hour film light, kinetic dust motes, and a small analog wrist device glowing faintly. Photorealistic, analog photography aesthetic: Kodak Portra tones, shallow depth, gentle grain, center-composed like Wes Anderson with uncanny Black Mirror tech, intimate Instagram story mood, subtle surreal edge and cinematic restraint.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

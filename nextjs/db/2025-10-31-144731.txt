@@ -1,3 +1,0 @@
-Korean man, robotic urbanity setting, stands medium closeup under rain of tiny brass cogs and oil-slick water, a single world element: a cracked, pocket-sized clockwork sparrow perched on his gloved hand. He is a 47-year-old tram mechanic in a soot-stained leather jacket and woven cap, fingers stained with machine grease, gently winding the bird's exposed gears. Composition: cinematic close medium shot, side profile, shallow depth of field, wet neon reflections on his jawline, hands illuminated. Photorealistic analog photography style, high-grain film, color palette of teal and amber, Rembrandt-inspired chiaroscuro, Ridley Scott neo-noir mood, lonely city hum and distant train horns.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

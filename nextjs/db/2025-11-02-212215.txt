@@ -1,3 +1,0 @@
-Korean man, 38, in a retro-futuristic salt-flat arcade at golden hour, medium close-up, wearing a mustard turtleneck and suede 70s jacket. He leans on a weathered payphone that dispenses cassette tapes; a stack of analog televisions float at ankle level, static screens reflecting his face. He studies a sepia Polaroid developing in his hand as grains of salt settle like dust on its surface. Surreal, quiet tension — an inverted sky ripples beneath his boots. Cinematic composition, Wes Anderson framing, Spielberg curiosity, film grain, Kodachrome tones, soft backlight, shallow depth, social-story intimacy, photorealistic analog photograph and faint mechanical wind chimes.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

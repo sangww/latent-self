@@ -34,8 +34,6 @@ export default async function handler(
     
     // Get metadata
     const timestamp = (Array.isArray(fields.timestamp) ? fields.timestamp[0] : fields.timestamp) as string || new Date().toISOString();
-    const prompt = (Array.isArray(fields.prompt) ? fields.prompt[0] : fields.prompt) as string || 'No prompt available';
-    const story = (Array.isArray(fields.story) ? fields.story[0] : fields.story) as string || '';
     const type = (Array.isArray(fields.type) ? fields.type[0] : fields.type) as string || 'generated';
     
     // Generate filename with timestamp
@@ -56,20 +54,29 @@ export default async function handler(
     const imagePath = path.join(dbDir, filename);
     await writeFile(imagePath, imageBuffer);
     
-    // Save prompt
-    const promptPath = path.join(dbDir, filename.replace(/\.png$/, '.txt'));
-    await writeFile(promptPath, `${prompt}\n${type}`, 'utf8');
+    // Handle story - can be either a file or text field
+    let story = '';
+    const storyFile = Array.isArray(files.story) ? files.story[0] : files.story;
     
-    // Save story if provided
-    if (story) {
+    if (storyFile) {
+      // Story provided as a file
+      const storyBuffer = await fs.promises.readFile(storyFile.filepath);
       const storyPath = path.join(dbDir, filename.replace(/\.png$/, '_story.txt'));
-      await writeFile(storyPath, story, 'utf8');
+      await writeFile(storyPath, storyBuffer);
+      story = storyBuffer.toString('utf8');
+    } else {
+      // Fallback to text field for backward compatibility
+      const storyText = (Array.isArray(fields.story) ? fields.story[0] : fields.story) as string || '';
+      if (storyText) {
+        const storyPath = path.join(dbDir, filename.replace(/\.png$/, '_story.txt'));
+        await writeFile(storyPath, storyText, 'utf8');
+        story = storyText;
+      }
     }
     
     const postData = {
       id: filename,
       timestamp,
-      prompt,
       story: story || '',
       filename,
       type,

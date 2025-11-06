@@ -1,3 +1,0 @@
-Korean man, 38, medium close-up three-quarter profile in a derelict rooftop orchard of cracked solar panels and vending machines repurposed as herb shelves, dusk drizzle catching neon strips. He wears a worn bomber jacket, linen shirt, and a brass wrist chronometer; one hand adjusts a reflective visor clipped to his brow. Soft film grain, high-contrast cinematic color grading reminiscent of Wes Anderson framing with Spielberg warmth and Black Mirror unease. Surreal detail: a line of antique typewriters stacked like totems behind him, keys faintly glowing. Shallow depth of field, analog lens flare, social-media candid feel, photorealistic, natural skin texture, intimate.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

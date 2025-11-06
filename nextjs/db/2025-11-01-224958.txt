@@ -1,3 +1,0 @@
-Korean man in his mid-40s stands on a peeling motel rooftop at dusk in a retro alternative 1970s setting, holding a pocket-sized mechanical weather machine with brass dials and a tiny glass storm chamber that exhales a soft whisper of fog. Medium close up three-quarter profile, eyes off camera, cigarette ember glowing. Cinematic Wes Anderson inspired symmetry, saturated warm film tones, visible grain and carefully framed negative space; surreal ordinary absurdity meets photoreal analog photography. Background neon motel sign and highway stretch into bokeh, composition crisp, contemplative and quietly uncanny. A cheap radio crackles songs, distant taillights like slow constellations.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen

@@ -1,3 +1,0 @@
-Korean man in a repairman outfit, medium close-up indoors in a sleek robot modern home, tuning a clockwork houseplant, a potted fern of brass gears and ticking leaves, tiny copper cogs reflecting warm tungsten light. The minimalist living room has teak surfaces integrated with polished servos and a slow mechanical cat sculpture curled on a shelf. Film grain, analog color saturation, shallow depth of field, off-center composition inspired by Wes Anderson symmetry and Ridley Scott textured futurism. Golden-hour light through floor-to-ceiling windows, subtle absurdism, photorealistic, tactile materials, with slight film border and cyan shadows, focus on hands and worn tools.
- <lora:chroma/sangww_000003750> <lora:chroma/Hyper-Chroma-low-step-LoRA:0.4>
-autogen
