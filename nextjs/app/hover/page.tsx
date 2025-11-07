@@ -19,6 +19,7 @@ export default function GridPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [hoveredPost, setHoveredPost] = useState<string | null>(null);
   const [displayedPost, setDisplayedPost] = useState<string | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const lastHoveredPostRef = useRef<string | null>(null);
   
@@ -28,6 +29,67 @@ export default function GridPage() {
   useEffect(() => {
     loadPosts();
   }, []);
+
+  // Prevent body scrolling on mobile
+  useEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    
+    return () => {
+      document.body.style.overflow = originalStyle;
+      document.body.style.position = '';
+      document.body.style.width = '';
+    };
+  }, []);
+
+  // Handle mouse events globally when dragging (in case user drags outside container)
+  useEffect(() => {
+    if (!isDragging) return;
+
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (!containerRef.current || allPosts.length === 0) return;
+      
+      const container = containerRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const mouseY = e.clientY - containerRect.top;
+      const containerHeight = containerRect.height;
+      
+      // Calculate which post is being hovered based on visible strip position
+      const postHeight = containerHeight / allPosts.length;
+      const hoveredIndex = Math.floor(mouseY / postHeight);
+      
+      if (hoveredIndex >= 0 && hoveredIndex < allPosts.length) {
+        const post = allPosts[hoveredIndex];
+        const postTop = hoveredIndex * postHeight;
+        const postBottom = postTop + postHeight;
+        
+        if (mouseY >= postTop && mouseY <= postBottom) {
+          const newPostId = post.id;
+          setHoveredPost(newPostId);
+          setDisplayedPost(newPostId);
+          lastHoveredPostRef.current = newPostId;
+        }
+      }
+    };
+
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+      if (lastHoveredPostRef.current) {
+        setDisplayedPost(lastHoveredPostRef.current);
+      }
+      setHoveredPost(null);
+    };
+
+    window.addEventListener('mousemove', handleGlobalMouseMove);
+    window.addEventListener('mouseup', handleGlobalMouseUp);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      window.removeEventListener('mouseup', handleGlobalMouseUp);
+    };
+  }, [isDragging, allPosts]);
 
   const loadPosts = async () => {
     try {
@@ -69,8 +131,37 @@ export default function GridPage() {
     }
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Prevent default behavior (text selection, context menu)
+    e.preventDefault();
+    setIsDragging(true);
+    
     if (!containerRef.current || allPosts.length === 0) return;
+    
+    const container = containerRef.current;
+    const containerRect = container.getBoundingClientRect();
+    const mouseY = e.clientY - containerRect.top;
+    const containerHeight = containerRect.height;
+    
+    // Calculate which post is being clicked based on visible strip position
+    const postHeight = containerHeight / allPosts.length;
+    const clickedIndex = Math.floor(mouseY / postHeight);
+    
+    if (clickedIndex >= 0 && clickedIndex < allPosts.length) {
+      const post = allPosts[clickedIndex];
+      const newPostId = post.id;
+      setHoveredPost(newPostId);
+      setDisplayedPost(newPostId);
+      lastHoveredPostRef.current = newPostId;
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Only update if dragging (mouse is down)
+    if (!isDragging || !containerRef.current || allPosts.length === 0) return;
+    
+    // Prevent default behavior during drag
+    e.preventDefault();
     
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
@@ -90,15 +181,89 @@ export default function GridPage() {
       if (mouseY >= postTop && mouseY <= postBottom) {
         const newPostId = post.id;
         setHoveredPost(newPostId);
-        setDisplayedPost(newPostId); // Always update displayed post when hovering
+        setDisplayedPost(newPostId); // Always update displayed post when dragging
         lastHoveredPostRef.current = newPostId; // Track the last hovered post
       }
     }
   };
 
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    // Keep the last hovered post as displayed when mouse is released
+    if (lastHoveredPostRef.current) {
+      setDisplayedPost(lastHoveredPostRef.current);
+    }
+    setHoveredPost(null);
+  };
+
   const handleMouseLeave = () => {
+    setIsDragging(false);
     // Keep the last hovered post as displayed when mouse leaves
     // Use the ref to ensure we have the most recent hovered post
+    if (lastHoveredPostRef.current) {
+      setDisplayedPost(lastHoveredPostRef.current);
+    }
+    setHoveredPost(null);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    // Prevent default scrolling behavior on touch start
+    e.preventDefault();
+    
+    if (!containerRef.current || allPosts.length === 0) return;
+    
+    const container = containerRef.current;
+    const containerRect = container.getBoundingClientRect();
+    const touch = e.touches[0];
+    const touchY = touch.clientY - containerRect.top;
+    const containerHeight = containerRect.height;
+    
+    // Calculate which post is being touched based on visible strip position
+    const postHeight = containerHeight / allPosts.length;
+    const touchedIndex = Math.floor(touchY / postHeight);
+    
+    if (touchedIndex >= 0 && touchedIndex < allPosts.length) {
+      const post = allPosts[touchedIndex];
+      const newPostId = post.id;
+      setHoveredPost(newPostId);
+      setDisplayedPost(newPostId);
+      lastHoveredPostRef.current = newPostId;
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    // Prevent default scrolling behavior
+    e.preventDefault();
+    
+    if (!containerRef.current || allPosts.length === 0) return;
+    
+    const container = containerRef.current;
+    const containerRect = container.getBoundingClientRect();
+    const touch = e.touches[0];
+    const touchY = touch.clientY - containerRect.top;
+    const containerHeight = containerRect.height;
+    
+    // Calculate which post is being touched based on visible strip position
+    const postHeight = containerHeight / allPosts.length;
+    const touchedIndex = Math.floor(touchY / postHeight);
+    
+    if (touchedIndex >= 0 && touchedIndex < allPosts.length) {
+      const post = allPosts[touchedIndex];
+      // Only set hover if touch is actually over a visible part of the strip
+      const postTop = touchedIndex * postHeight;
+      const postBottom = postTop + postHeight;
+      
+      if (touchY >= postTop && touchY <= postBottom) {
+        const newPostId = post.id;
+        setHoveredPost(newPostId);
+        setDisplayedPost(newPostId); // Always update displayed post when touching
+        lastHoveredPostRef.current = newPostId; // Track the last touched post
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    // Keep the last touched post as displayed when touch ends
     if (lastHoveredPostRef.current) {
       setDisplayedPost(lastHoveredPostRef.current);
     }
@@ -116,18 +281,42 @@ export default function GridPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#000000', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+    <div 
+      className="min-h-screen" 
+      style={{ 
+        fontFamily: 'Arial, sans-serif', 
+        backgroundColor: '#000000', 
+        width: '100vw', 
+        height: '100vh', 
+        overflow: 'hidden',
+        touchAction: 'none', // Prevent page scrolling on mobile
+        position: 'fixed', // Prevent page scroll
+        top: 0,
+        left: 0,
+      }}
+    >
       <main 
         ref={containerRef}
+        onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onContextMenu={(e) => e.preventDefault()} // Prevent right-click menu
         style={{ 
           width: '100%', 
           height: '100%', 
           padding: 0, 
           margin: 0,
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          touchAction: 'none', // Prevent default touch behaviors (scrolling, zooming)
+          WebkitOverflowScrolling: 'touch', // Smooth scrolling on iOS (though we're preventing it)
+          userSelect: 'none', // Prevent text selection
+          WebkitUserSelect: 'none', // Prevent text selection on Safari
+          cursor: 'grab', // Show grab cursor
         }}
       >
         {/* Single container - only render ONE image at a time (currently hovered or last displayed) */}
@@ -150,7 +339,7 @@ export default function GridPage() {
                 height: '100%',
                 transition: 'transform 0.3s ease, filter 0.3s ease',
                 transform: isHovered ? 'scale(1.02)' : 'scale(1)',
-                cursor: 'pointer',
+                cursor: isDragging ? 'grabbing' : 'grab',
               }}
             >
               {/* Image */}
