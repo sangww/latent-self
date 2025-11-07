@@ -92,14 +92,24 @@ export default function GridPage() {
     };
   }, [isDragging, allPosts]);
 
-  // Handle touch events globally when touching (in case user drags outside container)
+  // Handle touch events globally (in case user drags outside container)
+  // Always active to ensure Safari on iPhone works properly
   useEffect(() => {
+    const handleGlobalTouchStart = (e: TouchEvent) => {
+      // Prevent default on touch start to allow preventDefault on touchmove
+      if (containerRef.current && containerRef.current.contains(e.target as Node)) {
+        e.preventDefault();
+      }
+    };
+
     const handleGlobalTouchMove = (e: TouchEvent) => {
-      // Only handle if we're actively touching
-      if (!isTouching) return;
+      // Always prevent scrolling when touching the container
+      if (containerRef.current && containerRef.current.contains(e.target as Node)) {
+        e.preventDefault();
+      }
       
-      e.preventDefault(); // Prevent scrolling
-      if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
+      // Process touch move if we're actively touching
+      if (!isTouching || !containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
       
       const container = containerRef.current;
       const containerRect = container.getBoundingClientRect();
@@ -130,15 +140,17 @@ export default function GridPage() {
       setHoveredPost(null);
     };
 
-    // Always add listeners, but check isTouching inside
-    window.addEventListener('touchmove', handleGlobalTouchMove, { passive: false });
-    window.addEventListener('touchend', handleGlobalTouchEnd, { passive: false });
-    window.addEventListener('touchcancel', handleGlobalTouchEnd, { passive: false });
+    // Always add listeners with passive: false for Safari
+    document.addEventListener('touchstart', handleGlobalTouchStart, { passive: false });
+    document.addEventListener('touchmove', handleGlobalTouchMove, { passive: false });
+    document.addEventListener('touchend', handleGlobalTouchEnd, { passive: false });
+    document.addEventListener('touchcancel', handleGlobalTouchEnd, { passive: false });
     
     return () => {
-      window.removeEventListener('touchmove', handleGlobalTouchMove);
-      window.removeEventListener('touchend', handleGlobalTouchEnd);
-      window.removeEventListener('touchcancel', handleGlobalTouchEnd);
+      document.removeEventListener('touchstart', handleGlobalTouchStart);
+      document.removeEventListener('touchmove', handleGlobalTouchMove);
+      document.removeEventListener('touchend', handleGlobalTouchEnd);
+      document.removeEventListener('touchcancel', handleGlobalTouchEnd);
     };
   }, [isTouching, allPosts]);
 
@@ -261,7 +273,9 @@ export default function GridPage() {
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     // Prevent default scrolling behavior on touch start
+    // This is critical for Safari on iPhone
     e.preventDefault();
+    e.stopPropagation();
     setIsTouching(true);
     
     if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
@@ -287,11 +301,11 @@ export default function GridPage() {
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    // Prevent default scrolling behavior
+    // Prevent default scrolling behavior - critical for Safari
     e.preventDefault();
+    e.stopPropagation();
     
-    // Process touch move - don't check isTouching here as it might not be set yet
-    // The global handler will also process it, but this ensures local handling works
+    // Process touch move - always process, don't check isTouching
     if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
     
     const container = containerRef.current;
@@ -393,13 +407,20 @@ export default function GridPage() {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                transition: 'transform 0.3s ease, filter 0.3s ease',
-                transform: isHovered ? 'scale(1.02)' : 'scale(1)',
+                overflow: 'hidden', // Prevent stretching during transitions
                 cursor: isDragging ? 'grabbing' : 'grab',
               }}
             >
               {/* Image */}
-              <div className="relative w-full h-full">
+              <div 
+                className="relative w-full h-full"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
                 <Image
                   key={post.id}
                   src={`${basePath}/db/${post.filename}`}
@@ -410,6 +431,8 @@ export default function GridPage() {
                   priority
                   unoptimized
                   style={{ 
+                    // objectFit: 'cover' is handled by className
+                    // Don't set width/height with fill - it's absolutely positioned
                     filter: isHovered
                       ? 'contrast(0.9) saturate(1.1) brightness(1.15) hue-rotate(0deg)'
                       : 'contrast(0.75) saturate(0.9) brightness(1.08) hue-rotate(-4deg)',
