@@ -131,6 +131,7 @@ export default function GridPage() {
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   quality={isHovered ? 95 : 50}
                   priority={index < 3}
+                  unoptimized
                   style={{ 
                     filter: 'contrast(0.75) saturate(0.9) brightness(1.08) hue-rotate(-4deg)',
                   }}

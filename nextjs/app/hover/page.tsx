@@ -20,6 +20,7 @@ export default function GridPage() {
   const [hoveredPost, setHoveredPost] = useState<string | null>(null);
   const [displayedPost, setDisplayedPost] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const lastHoveredPostRef = useRef<string | null>(null);
   
   // Determine basePath based on whether we're in static export or server mode
   const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/latent-self') ? '/latent-self' : '';
@@ -57,7 +58,9 @@ export default function GridPage() {
       // Randomize default image on load
       if (fetchedData.length > 0) {
         const randomIndex = Math.floor(Math.random() * fetchedData.length);
-        setDisplayedPost(fetchedData[randomIndex].id);
+        const randomPostId = fetchedData[randomIndex].id;
+        setDisplayedPost(randomPostId);
+        lastHoveredPostRef.current = randomPostId; // Initialize ref with random post
       }
     } catch (error) {
       console.error('Error loading posts:', error);
@@ -67,7 +70,7 @@ export default function GridPage() {
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || allPosts.length === 0) return;
     
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
@@ -85,15 +88,21 @@ export default function GridPage() {
       const postBottom = postTop + postHeight;
       
       if (mouseY >= postTop && mouseY <= postBottom) {
-        setHoveredPost(post.id);
-        setDisplayedPost(post.id); // Update displayed post and keep it
+        const newPostId = post.id;
+        setHoveredPost(newPostId);
+        setDisplayedPost(newPostId); // Always update displayed post when hovering
+        lastHoveredPostRef.current = newPostId; // Track the last hovered post
       }
     }
   };
 
   const handleMouseLeave = () => {
+    // Keep the last hovered post as displayed when mouse leaves
+    // Use the ref to ensure we have the most recent hovered post
+    if (lastHoveredPostRef.current) {
+      setDisplayedPost(lastHoveredPostRef.current);
+    }
     setHoveredPost(null);
-    // Don't clear displayedPost - keep the last one visible
   };
 
   if (isLoading) {
@@ -153,8 +162,9 @@ export default function GridPage() {
                   fill
                   className="object-cover"
                   sizes="100vw"
-                  quality={95}
+                  quality={100}
                   priority
+                  unoptimized
                   style={{ 
                     filter: isHovered
                       ? 'contrast(0.9) saturate(1.1) brightness(1.15) hue-rotate(0deg)'
