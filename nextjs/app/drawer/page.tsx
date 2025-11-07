@@ -129,7 +129,6 @@ export default function GridPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                  quality={isHovered ? 95 : 50}
                   priority={index < 3}
                   unoptimized
                   style={{ 

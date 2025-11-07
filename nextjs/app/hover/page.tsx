@@ -162,7 +162,6 @@ export default function GridPage() {
                   fill
                   className="object-cover"
                   sizes="100vw"
-                  quality={100}
                   priority
                   unoptimized
                   style={{ 
