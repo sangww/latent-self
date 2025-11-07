@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 interface Post {
@@ -18,30 +18,14 @@ export default function GridPage() {
   const [allPosts, setAllPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hoveredPost, setHoveredPost] = useState<string | null>(null);
-  const [columns, setColumns] = useState(4);
+  const [displayedPost, setDisplayedPost] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   
   // Determine basePath based on whether we're in static export or server mode
   const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/latent-self') ? '/latent-self' : '';
 
   useEffect(() => {
     loadPosts();
-  }, []);
-
-  useEffect(() => {
-    const calculateColumns = () => {
-      if (typeof window === 'undefined') return;
-      
-      // Calculate how many columns fit based on window width
-      // Each column should be at least 300px wide (adjust as needed)
-      const minColumnWidth = 300;
-      const windowWidth = window.innerWidth;
-      const calculatedColumns = Math.max(2, Math.floor(windowWidth / minColumnWidth));
-      setColumns(calculatedColumns);
-    };
-
-    calculateColumns();
-    window.addEventListener('resize', calculateColumns);
-    return () => window.removeEventListener('resize', calculateColumns);
   }, []);
 
   const loadPosts = async () => {
@@ -69,11 +53,47 @@ export default function GridPage() {
       }
       
       setAllPosts(fetchedData);
+      
+      // Randomize default image on load
+      if (fetchedData.length > 0) {
+        const randomIndex = Math.floor(Math.random() * fetchedData.length);
+        setDisplayedPost(fetchedData[randomIndex].id);
+      }
     } catch (error) {
       console.error('Error loading posts:', error);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    
+    const container = containerRef.current;
+    const containerRect = container.getBoundingClientRect();
+    const mouseY = e.clientY - containerRect.top;
+    const containerHeight = containerRect.height;
+    
+    // Calculate which post is being hovered based on visible strip position
+    const postHeight = containerHeight / allPosts.length;
+    const hoveredIndex = Math.floor(mouseY / postHeight);
+    
+    if (hoveredIndex >= 0 && hoveredIndex < allPosts.length) {
+      const post = allPosts[hoveredIndex];
+      // Only set hover if mouse is actually over a visible part of the strip
+      const postTop = hoveredIndex * postHeight;
+      const postBottom = postTop + postHeight;
+      
+      if (mouseY >= postTop && mouseY <= postBottom) {
+        setHoveredPost(post.id);
+        setDisplayedPost(post.id); // Update displayed post and keep it
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredPost(null);
+    // Don't clear displayedPost - keep the last one visible
   };
 
   if (isLoading) {
@@ -87,54 +107,57 @@ export default function GridPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#000000', width: '100vw', height: '100vh', overflow: 'auto' }}>
-      <main style={{ width: '100%', height: '100%', padding: 0, margin: 0 }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: `repeat(${columns}, 1fr)`,
-            gap: '1px',
-            gridAutoRows: 'auto',
-            width: '100%',
-            height: '100%',
-            backgroundColor: '#000000',
-          }}
-        >
-          {allPosts.map((post) => (
+    <div className="min-h-screen" style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#000000', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <main 
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          padding: 0, 
+          margin: 0,
+          position: 'relative',
+          overflow: 'hidden'
+        }}
+      >
+        {/* Single container - only render ONE image at a time (currently hovered or last displayed) */}
+        {(() => {
+          const post = displayedPost 
+            ? allPosts.find(p => p.id === displayedPost)
+            : null;
+          
+          if (!post) return null;
+          
+          const isHovered = hoveredPost === post.id;
+          
+          return (
             <div
-              key={post.id}
-              className="relative group"
-              onMouseEnter={() => setHoveredPost(post.id)}
-              onMouseLeave={() => setHoveredPost(null)}
               style={{
-                position: 'relative',
-                aspectRatio: '1',
-                borderRadius: 0,
-                overflow: 'hidden',
-                backgroundColor: '#151318',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                transition: 'transform 0.3s ease, filter 0.3s ease',
+                transform: isHovered ? 'scale(1.02)' : 'scale(1)',
                 cursor: 'pointer',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'scale(1.01)';
-                e.currentTarget.style.zIndex = '10';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.zIndex = '1';
               }}
             >
               {/* Image */}
               <div className="relative w-full h-full">
                 <Image
+                  key={post.id}
                   src={`${basePath}/db/${post.filename}`}
                   alt={`AI Generated Art - ${post.type}`}
                   fill
                   className="object-cover"
-                  unoptimized
+                  sizes="100vw"
+                  quality={95}
+                  priority
                   style={{ 
-                    filter: hoveredPost === post.id 
-                      ? 'contrast(0.9) saturate(1.1) brightness(1.15) hue-rotate(0deg)' 
+                    filter: isHovered
+                      ? 'contrast(0.9) saturate(1.1) brightness(1.15) hue-rotate(0deg)'
                       : 'contrast(0.75) saturate(0.9) brightness(1.08) hue-rotate(-4deg)',
                     transition: 'filter 0.3s ease'
                   }}
@@ -149,7 +172,7 @@ export default function GridPage() {
                   background: 'linear-gradient(to bottom, rgba(138,153,179,0.3) 0%, rgba(100,130,160,0.18) 50%, rgba(160,170,190,0.22) 100%)',
                   mixBlendMode: 'overlay',
                   pointerEvents: 'none',
-                  opacity: hoveredPost === post.id ? 0.5 : 1,
+                  opacity: isHovered ? 0.5 : 1,
                   transition: 'opacity 0.3s ease'
                 }}></div>
                 {/* Additional haze */}
@@ -162,7 +185,7 @@ export default function GridPage() {
                   background: 'radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(240,245,255,0.12) 50%, transparent 80%)',
                   mixBlendMode: 'soft-light',
                   pointerEvents: 'none',
-                  opacity: hoveredPost === post.id ? 0.5 : 1,
+                  opacity: isHovered ? 0.5 : 1,
                   transition: 'opacity 0.3s ease'
                 }}></div>
                 {/* Vignette effect */}
@@ -174,13 +197,13 @@ export default function GridPage() {
                   bottom: 0,
                   background: 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.6) 100%)',
                   pointerEvents: 'none',
-                  opacity: hoveredPost === post.id ? 0.3 : 1,
+                  opacity: isHovered ? 0.3 : 1,
                   transition: 'opacity 0.3s ease'
                 }}></div>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })()}
 
         {allPosts.length === 0 && (
           <section className="text-center py-32" style={{ color: '#9ca3af' }}>
