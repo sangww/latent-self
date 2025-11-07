@@ -20,6 +20,7 @@ export default function GridPage() {
   const [hoveredPost, setHoveredPost] = useState<string | null>(null);
   const [displayedPost, setDisplayedPost] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const lastHoveredPostRef = useRef<string | null>(null);
   
@@ -90,6 +91,51 @@ export default function GridPage() {
       window.removeEventListener('mouseup', handleGlobalMouseUp);
     };
   }, [isDragging, allPosts]);
+
+  // Handle touch events globally when touching (in case user drags outside container)
+  useEffect(() => {
+    if (!isTouching) return;
+
+    const handleGlobalTouchMove = (e: TouchEvent) => {
+      e.preventDefault(); // Prevent scrolling
+      if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
+      
+      const container = containerRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const touch = e.touches[0];
+      const touchY = touch.clientY - containerRect.top;
+      const containerHeight = containerRect.height;
+      
+      // Calculate which post is being touched based on visible strip position
+      const postHeight = containerHeight / allPosts.length;
+      const touchedIndex = Math.floor(touchY / postHeight);
+      const validIndex = Math.max(0, Math.min(touchedIndex, allPosts.length - 1));
+      const post = allPosts[validIndex];
+      
+      if (post) {
+        const newPostId = post.id;
+        setHoveredPost(newPostId);
+        setDisplayedPost(newPostId);
+        lastHoveredPostRef.current = newPostId;
+      }
+    };
+
+    const handleGlobalTouchEnd = () => {
+      setIsTouching(false);
+      if (lastHoveredPostRef.current) {
+        setDisplayedPost(lastHoveredPostRef.current);
+      }
+      setHoveredPost(null);
+    };
+
+    window.addEventListener('touchmove', handleGlobalTouchMove, { passive: false });
+    window.addEventListener('touchend', handleGlobalTouchEnd);
+    
+    return () => {
+      window.removeEventListener('touchmove', handleGlobalTouchMove);
+      window.removeEventListener('touchend', handleGlobalTouchEnd);
+    };
+  }, [isTouching, allPosts]);
 
   const loadPosts = async () => {
     try {
@@ -209,8 +255,9 @@ export default function GridPage() {
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     // Prevent default scrolling behavior on touch start
     e.preventDefault();
+    setIsTouching(true);
     
-    if (!containerRef.current || allPosts.length === 0) return;
+    if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
     
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
@@ -221,9 +268,10 @@ export default function GridPage() {
     // Calculate which post is being touched based on visible strip position
     const postHeight = containerHeight / allPosts.length;
     const touchedIndex = Math.floor(touchY / postHeight);
+    const validIndex = Math.max(0, Math.min(touchedIndex, allPosts.length - 1));
+    const post = allPosts[validIndex];
     
-    if (touchedIndex >= 0 && touchedIndex < allPosts.length) {
-      const post = allPosts[touchedIndex];
+    if (post) {
       const newPostId = post.id;
       setHoveredPost(newPostId);
       setDisplayedPost(newPostId);
@@ -235,7 +283,7 @@ export default function GridPage() {
     // Prevent default scrolling behavior
     e.preventDefault();
     
-    if (!containerRef.current || allPosts.length === 0) return;
+    if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
     
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
@@ -247,22 +295,21 @@ export default function GridPage() {
     const postHeight = containerHeight / allPosts.length;
     const touchedIndex = Math.floor(touchY / postHeight);
     
-    if (touchedIndex >= 0 && touchedIndex < allPosts.length) {
-      const post = allPosts[touchedIndex];
-      // Only set hover if touch is actually over a visible part of the strip
-      const postTop = touchedIndex * postHeight;
-      const postBottom = postTop + postHeight;
-      
-      if (touchY >= postTop && touchY <= postBottom) {
-        const newPostId = post.id;
-        setHoveredPost(newPostId);
-        setDisplayedPost(newPostId); // Always update displayed post when touching
-        lastHoveredPostRef.current = newPostId; // Track the last touched post
-      }
+    // Clamp index to valid range
+    const validIndex = Math.max(0, Math.min(touchedIndex, allPosts.length - 1));
+    const post = allPosts[validIndex];
+    
+    if (post) {
+      const newPostId = post.id;
+      // Always update on touch move - no need for extra bounds checking
+      setHoveredPost(newPostId);
+      setDisplayedPost(newPostId);
+      lastHoveredPostRef.current = newPostId;
     }
   };
 
   const handleTouchEnd = () => {
+    setIsTouching(false);
     // Keep the last touched post as displayed when touch ends
     if (lastHoveredPostRef.current) {
       setDisplayedPost(lastHoveredPostRef.current);
