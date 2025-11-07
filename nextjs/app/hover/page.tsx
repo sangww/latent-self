@@ -94,9 +94,10 @@ export default function GridPage() {
 
   // Handle touch events globally when touching (in case user drags outside container)
   useEffect(() => {
-    if (!isTouching) return;
-
     const handleGlobalTouchMove = (e: TouchEvent) => {
+      // Only handle if we're actively touching
+      if (!isTouching) return;
+      
       e.preventDefault(); // Prevent scrolling
       if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
       
@@ -121,6 +122,7 @@ export default function GridPage() {
     };
 
     const handleGlobalTouchEnd = () => {
+      if (!isTouching) return;
       setIsTouching(false);
       if (lastHoveredPostRef.current) {
         setDisplayedPost(lastHoveredPostRef.current);
@@ -128,12 +130,15 @@ export default function GridPage() {
       setHoveredPost(null);
     };
 
+    // Always add listeners, but check isTouching inside
     window.addEventListener('touchmove', handleGlobalTouchMove, { passive: false });
-    window.addEventListener('touchend', handleGlobalTouchEnd);
+    window.addEventListener('touchend', handleGlobalTouchEnd, { passive: false });
+    window.addEventListener('touchcancel', handleGlobalTouchEnd, { passive: false });
     
     return () => {
       window.removeEventListener('touchmove', handleGlobalTouchMove);
       window.removeEventListener('touchend', handleGlobalTouchEnd);
+      window.removeEventListener('touchcancel', handleGlobalTouchEnd);
     };
   }, [isTouching, allPosts]);
 
@@ -203,11 +208,13 @@ export default function GridPage() {
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only update if dragging (mouse is down)
-    if (!isDragging || !containerRef.current || allPosts.length === 0) return;
+    // Update on mouse move (not just when dragging)
+    if (!containerRef.current || allPosts.length === 0) return;
     
     // Prevent default behavior during drag
-    e.preventDefault();
+    if (isDragging) {
+      e.preventDefault();
+    }
     
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
@@ -227,7 +234,7 @@ export default function GridPage() {
       if (mouseY >= postTop && mouseY <= postBottom) {
         const newPostId = post.id;
         setHoveredPost(newPostId);
-        setDisplayedPost(newPostId); // Always update displayed post when dragging
+        setDisplayedPost(newPostId); // Always update displayed post on mouse move
         lastHoveredPostRef.current = newPostId; // Track the last hovered post
       }
     }
@@ -283,6 +290,8 @@ export default function GridPage() {
     // Prevent default scrolling behavior
     e.preventDefault();
     
+    // Process touch move - don't check isTouching here as it might not be set yet
+    // The global handler will also process it, but this ensures local handling works
     if (!containerRef.current || allPosts.length === 0 || !e.touches[0]) return;
     
     const container = containerRef.current;
@@ -301,7 +310,7 @@ export default function GridPage() {
     
     if (post) {
       const newPostId = post.id;
-      // Always update on touch move - no need for extra bounds checking
+      // Always update on touch move
       setHoveredPost(newPostId);
       setDisplayedPost(newPostId);
       lastHoveredPostRef.current = newPostId;

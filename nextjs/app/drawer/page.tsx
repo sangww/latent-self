@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 interface Post {
@@ -17,8 +17,11 @@ interface Post {
 export default function GridPage() {
   const [allPosts, setAllPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [hoveredPost, setHoveredPost] = useState<string | null>(null);
-  const [columns, setColumns] = useState(4);
+  const [activePost, setActivePost] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(500);
+  const mainRef = useRef<HTMLElement>(null);
+  const imageRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   
   // Determine basePath based on whether we're in static export or server mode
   const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/latent-self') ? '/latent-self' : '';
@@ -28,21 +31,95 @@ export default function GridPage() {
   }, []);
 
   useEffect(() => {
-    const calculateColumns = () => {
+    const checkMobile = () => {
       if (typeof window === 'undefined') return;
-      
-      // Calculate how many columns fit based on window width
-      // Each column should be at least 300px wide (adjust as needed)
-      const minColumnWidth = 300;
-      const windowWidth = window.innerWidth;
-      const calculatedColumns = Math.max(2, Math.floor(windowWidth / minColumnWidth));
-      setColumns(calculatedColumns);
+      const width = window.innerWidth;
+      setIsMobile(width <= 768);
+      setViewportWidth(width);
     };
 
-    calculateColumns();
-    window.addEventListener('resize', calculateColumns);
-    return () => window.removeEventListener('resize', calculateColumns);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!mainRef.current || allPosts.length === 0) return;
+      
+      const scrollTop = mainRef.current.scrollTop;
+      const viewportHeight = window.innerHeight;
+      const scrollHeight = mainRef.current.scrollHeight;
+      const imageHeight = isMobile ? viewportWidth : 500;
+      const centerY = scrollTop + viewportHeight / 2;
+      
+      // Calculate progressive weights based on scroll position
+      // Continuous weighting across entire scroll range for smooth transitions
+      const maxScrollable = scrollHeight - viewportHeight;
+      const scrollProgress = maxScrollable > 0 ? scrollTop / maxScrollable : 0; // 0 at top, 1 at bottom
+      
+      // Find image with best weighted score
+      let bestPost: string | null = null;
+      let bestScore = Infinity;
+      
+      allPosts.forEach((post, index) => {
+        const verticalOffset = index * 40; // Increased from 20px to 40px
+        const imageTop = verticalOffset;
+        const imageCenterY = imageTop + imageHeight / 2;
+        
+        // Base distance from viewport center
+        const distance = Math.abs(imageCenterY - centerY);
+        
+        // Progressive weighting: apply smooth weighting across entire scroll range
+        const normalizedIndex = index / (allPosts.length - 1 || 1); // 0 for first, 1 for last
+        
+        // Continuous weighting across entire scroll range (not just edge zones)
+        // Gentler curves to avoid skipping images
+        const topInfluence = Math.max(0, 1 - scrollProgress * 1.5); // Gentler fade from top
+        const bottomInfluence = Math.max(0, (scrollProgress - 0.33) * 1.5); // Gentler fade from bottom
+        
+        // Gentler curve for weighting (using square root for less aggressive transition)
+        const topWeightSmooth = Math.sqrt(topInfluence);
+        const bottomWeightSmooth = Math.sqrt(bottomInfluence);
+        
+        // Reduced bonus multiplier for less aggressive weighting
+        const bonusMultiplier = imageHeight * 1.5; // Reduced from 3 to 1.5 for gentler transitions
+        const topBonus = topWeightSmooth * (1 - normalizedIndex) * bonusMultiplier;
+        const bottomBonus = bottomWeightSmooth * normalizedIndex * bonusMultiplier;
+        
+        // Weighted score: distance minus bonuses (lower is better)
+        const weightedScore = distance - topBonus - bottomBonus;
+        
+        if (weightedScore < bestScore) {
+          bestScore = weightedScore;
+          bestPost = post.id;
+        }
+      });
+      
+      // Ensure absolute edges are reachable
+      if (scrollTop <= 5) {
+        // At the absolute top, force first image
+        setActivePost(allPosts[0].id);
+      } else if (scrollTop + viewportHeight >= scrollHeight - 5) {
+        // At the absolute bottom, force last image
+        setActivePost(allPosts[allPosts.length - 1].id);
+      } else if (bestPost) {
+        // Otherwise use the weighted calculation
+        setActivePost(bestPost);
+      }
+    };
+
+    const mainElement = mainRef.current;
+    if (mainElement) {
+      mainElement.addEventListener('scroll', handleScroll);
+      // Initial check
+      handleScroll();
+      
+      return () => {
+        mainElement.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, [allPosts, isMobile, viewportWidth]);
 
   const loadPosts = async () => {
     try {
@@ -87,48 +164,66 @@ export default function GridPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#000000', width: '100vw', height: '100vh', overflow: 'auto' }}>
-      <main style={{ width: '100%', height: '100%', padding: 0, margin: 0 }}>
+    <div className="min-h-screen" style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#000000', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <main 
+        ref={mainRef}
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          padding: 0, 
+          margin: 0, 
+          overflowX: 'hidden', 
+          overflowY: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: `repeat(${columns}, 1fr)`,
-            gap: '1px',
-            gridAutoRows: 'auto',
-            width: '100%',
-            height: '100%',
+            position: 'relative',
+            width: isMobile ? '100vw' : '500px',
+            minHeight: '100%',
             backgroundColor: '#000000',
+            paddingBottom: allPosts.length > 0 ? `${allPosts.length * 40}px` : '0', // Account for vertical offset
           }}
         >
           {allPosts.map((post, index) => {
-            const isHovered = hoveredPost === post.id;
+            const isActive = activePost === post.id;
+            // Stack images with z-index based on order, active one on top
+            const zIndex = isActive ? allPosts.length + 1 : index + 1;
+            // Add vertical offset to create stacked effect (only vertical, no horizontal)
+            const verticalOffset = index * 40; // 40px vertical offset per image (increased from 20px)
             
             return (
               <div
                 key={post.id}
+                ref={(el) => {
+                  imageRefs.current[post.id] = el;
+                }}
                 className="relative group"
-                onMouseEnter={() => setHoveredPost(post.id)}
-                onMouseLeave={() => setHoveredPost(null)}
                 style={{
-                  position: 'relative',
-                  aspectRatio: '1',
+                  position: 'absolute',
+                  top: `${verticalOffset}px`,
+                  left: 0, // All images at same x position (vertically stacked)
+                  width: isMobile ? '100vw' : '500px',
+                  height: isMobile ? '100vw' : '500px', // Square based on width
                   borderRadius: 0,
                   overflow: 'hidden',
                   backgroundColor: '#151318',
-                  cursor: 'pointer',
-                  zIndex: isHovered ? 10 : 1,
+                  cursor: 'default',
+                  zIndex: zIndex,
                   transition: 'z-index 0s',
                 }}
               >
               {/* Image */}
               <div className="relative w-full h-full">
                 <Image
-                  key={`${post.id}-${isHovered ? 'high' : 'low'}`}
+                  key={`${post.id}-${isActive ? 'high' : 'low'}`}
                   src={`${basePath}/db/${post.filename}`}
                   alt={`AI Generated Art - ${post.type}`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                  sizes={isMobile ? '100vw' : '500px'}
                   priority={index < 3}
                   unoptimized
                   style={{ 
