@@ -3,7 +3,8 @@
 
 import openai
 import requests
-from base64 import b64decode
+import re
+from base64 import b64decode, b64encode
 from time import gmtime, strftime
 import os
 from dotenv import load_dotenv
@@ -231,19 +232,55 @@ def generate_single_image():
         with open(prompt_filename, "w", encoding="utf-8") as f:
             f.write(prompt)
         
-        # Generate Twitter-style story
+        # Generate Twitter-style story with image
         story_filename = f"db/{t}_story.txt"
-        print("📱 Generating Twitter story...")
+        print("📱 Generating story with image...")
         try:
+            # Read the saved image for vision API
+            with open(filename, 'rb') as img_file:
+                image_data_b64 = b64encode(img_file.read()).decode('utf-8')
+            
+            system_prompt = """You help create a short instagram story. Use the original prompt just for information, but totally rewrite it. The original prompt may not be related to the image. Focus on the image, and create a new post from the image as a first person account, in a fictional world. Make it short, less than 35 words.
+    
+    Do not include 3rd person descriptors--like you won't call your reality 'retro-futuristic' even if the prompt has it. Don't say awkward things like "brass watch" like even in fictional world they won't describe it that way. Perhaps, just give technological terms instead. Don't use terms like "cradling," "hum," "orb," "terrarium," or other poetic sounding phrases. Keep it real and average person.
+    
+    Return only the new story content. You can opt to include 1 or 2 hashtags at the end, or also none. """
+            
+            user_text = f"Image prompt used (to be discarded): {prompt}"
+            
             story_response = client.chat.completions.create(
-                model="gpt-5-mini",
+                model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": "You help create a short, casual, single-point writing for social media photo post. Keep the post first-person, personal, not too descriptive, in twitter length. Do not include 3rd person descriptors--like you won't call your reality 'retro-futuristic' even if the prompt has it. You should write it from the perspective of the person in the photo. For instance, people see the photo, so you won't need to reference all the details in the prompt. Rather describe the monologue of the person in the photo. You can opt to include 1 or 2 hashtags at the end, or also none."},
-                    {"role": "user", "content": f"Image prompt: {prompt}"}
+                    {
+                        "role": "system",
+                        "content": system_prompt
+                    },
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": user_text
+                            },
+                            {
+                                "type": "image_url",
+                                "image_url": {
+                                    "url": f"data:image/png;base64,{image_data_b64}"
+                                }
+                            }
+                        ]
+                    }
                 ],
             )
             
             story = story_response.choices[0].message.content.strip()
+            
+            # Clean any markdown formatting
+            story = re.sub(r'```[a-z]*\n?', '', story)
+            story = re.sub(r'\*\*([^*]+)\*\*', r'\1', story)
+            story = re.sub(r'\*([^*]+)\*', r'\1', story)
+            story = story.strip()
+            
             print(f"📱 Generated story: {story}")
             
             # Save story locally
@@ -254,6 +291,9 @@ def generate_single_image():
             
         except Exception as story_error:
             print(f"⚠️ Story generation failed: {story_error}")
+            if DEBUG:
+                import traceback
+                traceback.print_exc()
             story = "Story generation failed"
             # Save fallback story
             with open(story_filename, "w", encoding="utf-8") as f:
